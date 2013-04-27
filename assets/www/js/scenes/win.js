@@ -36,12 +36,9 @@ Crafty.scene("win", function() {
         y: imageY
     }).image(imgName);
 
-    Crafty.load([imgName], function() {
-        // выполним это действие, после того как images/sprite.png будет загружен
-        setTimeout(function() {
+    setTimeout(function() {
           Crafty.scene("main");
-        }, 1500);
-    });
+    }, 1500);
 
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, h: 50, z: 1, scope: Settings.scope});
 });
