@@ -1,0 +1,35 @@
+Crafty.scene("top", function() {
+    // меняем цвет фона
+    Crafty.background("#000");
+    Crafty.e("2D, DOM, Text, Image").attr({
+        w: Crafty.DOM.window.width,
+        h: Crafty.DOM.window.height,
+        x: 0,
+        y: 0
+    }).image("images/ground.jpg", "repeat");
+
+    // выводим по центру текст
+    var imageX = Crafty.DOM.window.width/2;
+    var imageY = Crafty.DOM.window.height/2;
+    var h  = 50;
+    var count = (2.0*imageY - 200)/h;
+
+    for (var i = 0; i < count; i++) {
+        Crafty.e("2D, DOM, Text")
+            .attr({w: 200, h: h, x: imageX - 100, y: imageY - h*count/2 +  + i*h})
+            .text("Game over")
+            .css({
+                "text-align": "center",
+                "color": "white",
+                "font-size": "40px"
+            });        
+        Crafty.e("2D, DOM, Text")
+            .attr({w: 200, h: h, x: imageX + 100, y: imageY - h*count/2 +  + i*h})
+            .text("10")
+            .css({
+                "text-align": "center",
+                "color": "white",
+                "font-size": "40px"
+            });        
+    }
+});

@@ -1,11 +1,5 @@
 Crafty.scene("lose", function() {
-    Settings.scope = Math.round(Settings.scope/2);
-    if (Settings.scope < 50) {
-        Settings.level = 1;
-        Settings.speed = 1;
-        Settings.scope = 0;
-    }
-
+    Game.level.fail();
     Crafty.background("#000");
     // меняем цвет фона
     Crafty.background("#000");

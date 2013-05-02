@@ -10,7 +10,8 @@ var Settings = {
 };
 
 var Game = {
-    scopeView: function () {}
+    scopeView: {},
+    level: {}
 };
 
 var AllScripts = [
@@ -30,12 +31,25 @@ var AllScripts = [
     'js/scenes/loading',
     'js/scenes/main',
     'js/scenes/win',
-    'js/scenes/lose'
+    'js/scenes/lose',
+    //utils
+    'js/storage.js',
+    'js/utils.js'
 ];
 
 require(AllScripts, function() {
     Crafty.init(); // инизиализируем игровое поле
 
+    Game.level = new Level(Settings);
+    /*
+    Crafty.settings.register("scope", function(e) {
+        console.log("scope", e);
+    });
+    
+    Crafty.storage.open('asd');
+    if (Crafty.storage.load("scope", "save"))
+        Settings.scope = Crafty.storage.load("scope", "save");
+    */
     // подгружаем спрайт
     Crafty.sprite(Settings.poligon, "images/digger.png", {
         digger: [0,0]

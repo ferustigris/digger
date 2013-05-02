@@ -28,10 +28,10 @@ Crafty.scene("main", function() {
 
             if ((i + j > 0) && !Crafty.math.randomInt(0, 3)) {
                 Crafty.e("Stone").attr({
-                    x: i * Settings.poligon,
-                    y: j * Settings.poligon,
-                    w: Settings.poligon,
-                    h: Settings.poligon
+                    x: i * Settings.poligon + 10,
+                    y: j * Settings.poligon + 20,
+                    w: Settings.poligon - 20,
+                    h: Settings.poligon - 20
                     });
                 stonesCoords += joinCoord(i, j);
             }

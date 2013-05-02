@@ -1,9 +1,5 @@
 Crafty.scene("win", function() {
-    Settings.level += 1;
-    if (Settings.level > 4) {
-        Settings.level = 2;
-        Settings.speed += 1;
-    }
+    Game.level.complite();
 
     // меняем цвет фона
     Crafty.background("#000");
