@@ -26,7 +26,7 @@ Crafty.scene("main", function() {
                 stonesCoords += joinCoord(i, j);
             } else
 
-            if ((i + j > 0) && !Crafty.math.randomInt(0, 3)) {
+            if ((i + j > 0) && !Crafty.math.randomInt(0, 4)) {
                 Crafty.e("Stone").attr({
                     x: i * Settings.poligon + 10,
                     y: j * Settings.poligon + 20,
