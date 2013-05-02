@@ -11,13 +11,16 @@ Crafty.scene("top", function() {
     // выводим по центру текст
     var imageX = Crafty.DOM.window.width/2;
     var imageY = Crafty.DOM.window.height/2;
-    var h  = 50;
+    var h = 50;
     var count = (2.0*imageY - 200)/h;
 
+    var top = new TopResults(Settings);
+
     for (var i = 0; i < count; i++) {
+        var topItem = top.get(i);
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX - 100, y: imageY - h*count/2 +  + i*h})
-            .text("Game over")
+            .text(topItem.name)
             .css({
                 "text-align": "center",
                 "color": "white",
@@ -25,7 +28,7 @@ Crafty.scene("top", function() {
             });        
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX + 100, y: imageY - h*count/2 +  + i*h})
-            .text("10")
+            .text(topItem.value)
             .css({
                 "text-align": "center",
                 "color": "white",

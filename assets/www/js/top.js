@@ -10,7 +10,10 @@ var Settings = {
 };
 
 var AllScripts = [
-    'js/scenes/top'
+    'js/scenes/top',
+    //utils
+    'js/storage.js',
+    'js/utils.js'    
 ];
 
 require(AllScripts, function() {

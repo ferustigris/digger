@@ -1,5 +1,5 @@
 Crafty.scene("lose", function() {
-    Game.level.fail();
+    var isGameOver = Game.level.fail();
     Crafty.background("#000");
     // меняем цвет фона
     Crafty.background("#000");
@@ -18,7 +18,7 @@ Crafty.scene("lose", function() {
 
     Crafty.e("2D, DOM, Text")
         .attr({w: 200, h: 200, x: imageX - 100, y: imageY - 100})
-        .text("Game over")
+        .text(isGameOver ? "Game over" : "You loose...")
         .css({
             "text-align": "center",
             "color": "white",
