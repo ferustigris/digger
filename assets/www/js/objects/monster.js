@@ -27,6 +27,7 @@ Crafty.c('Monster', {
             Game.scopeView.update(Settings.scope);
             console.log("scope=" + Settings.scope);
             this.clean();
+            Crafty.audio.play("chick");
         })
     },
 

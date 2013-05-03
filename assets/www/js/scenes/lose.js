@@ -18,7 +18,7 @@ Crafty.scene("lose", function() {
 
     Crafty.e("2D, DOM, Text")
         .attr({w: 200, h: 200, x: imageX - 100, y: imageY - 100})
-        .text(isGameOver ? "Game over" : "You loose...")
+        .text(isGameOver ? "Game over" : "You loose")
         .css({
             "text-align": "center",
             "color": "white",
