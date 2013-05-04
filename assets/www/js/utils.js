@@ -22,7 +22,7 @@ var Sound = function () {
         return self;
     }
     
-    this.switch = function () {
+    this.soundSwitch = function () {
         if (self.sound) {
             self.off();
         } else {
@@ -35,7 +35,7 @@ var Sound = function () {
 }
 
 $(window).load(function () {
-    Sound().switch().switch();
+    Sound().soundSwitch().soundSwitch();
 });
 
 var Level = function (game) {
