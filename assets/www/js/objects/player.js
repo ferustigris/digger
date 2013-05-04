@@ -27,7 +27,8 @@ Crafty.c('Player', {
             Game.scopeView.update(Settings.scope);
             console.log("scope=" + Settings.scope);
             
-            Crafty.audio.play("money");
+            if (Settings.sound)
+                Crafty.audio.play("money");
 
             if ((Settings.flower_count -= 1) == 0) {
                 setTimeout(function() {
@@ -36,11 +37,22 @@ Crafty.c('Player', {
             }
         });
 
+        this.onHit("bonus", function(e) {
+            var object = e[0].obj;
+            object.clear();
+
+            Settings.scope *= 2;
+            Game.scopeView.update(Settings.scope);
+            console.log("scope=" + Settings.scope);
+            if (Settings.sound)
+                Crafty.audio.play("namnam");
+        });
+
         var player = this;
         this.onHit("monster", function(e) {
-            player.clear();
-            
-            Crafty.audio.play("namnam");
+            player.clear(); 
+            if (Settings.sound)
+                Crafty.audio.play("namnam");
             
             setTimeout(function() {
                 Crafty.scene("lose");

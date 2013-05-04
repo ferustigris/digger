@@ -6,7 +6,8 @@ var Settings = {
     scope: 0,
     level: 2, // текущий уровень
     speed: 1, // current monster speed
-    flower_count: 0 // цветоков на уровне
+    flower_count: 0, // цветоков на уровне
+    sound: true
 };
 
 var Game = {
@@ -27,6 +28,7 @@ var AllScripts = [
     'js/objects/fourway_touch',
     'js/objects/monster',
     'js/objects/scope',
+    'js/objects/bonus',
     // scenes
     'js/scenes/loading',
     'js/scenes/main',
@@ -41,6 +43,7 @@ require(AllScripts, function() {
     Crafty.init(); // инизиализируем игровое поле
 
     Game.level = new Level(Settings);
+    Settings.sound = Sound().sound;
 
     // подгружаем спрайт
     Crafty.sprite(Settings.poligon, "images/digger.png", {
@@ -66,6 +69,9 @@ require(AllScripts, function() {
     });
     Crafty.sprite(Settings.poligon, "images/bag.png", {
         bag: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/repa.png", {
+        repa: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/cross.png", {
         cross: [0,0]

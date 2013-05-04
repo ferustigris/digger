@@ -4,6 +4,8 @@
 <head>
   <link href="css/menu-red.css" rel="stylesheet" type="text/css">
   <link href="css/game.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/storage.js"></script>
   <script type="text/javascript" src="js/utils.js"></script>
   <title>Digger</title>
 </head>
@@ -12,7 +14,8 @@
 	    <ul>
     	    <li><a href='top.html'><span>Top</span></a></li>
     		<li class='active'><a href='game.html'><span>Play</span></a></li>
-        	<!--<li><a href='#' onClick='exit()'><span>Quit</span></a></li>-->
+            <li><a href='#' onClick='Sound().switch()'><span class='soundLabel'>Sound</span></a></li>
+            <li><a href='#' onClick='exit()'><span>Quit</span></a></li>
         	<li class='last'><a href='about.html'><span>About</span></a></li>
             </ul>
         </div>

@@ -4,7 +4,7 @@ Crafty.scene("main", function() {
 
     var flower_count = Settings.level;
     Settings.flower_count = 0;
-    var stonesCoords = "";
+    var stonesCoords = "0,0;";
     function joinCoord(x, y) {
         return x + "," + y + ";";
     }
@@ -13,8 +13,8 @@ Crafty.scene("main", function() {
         for(var j = 0; j*Settings.poligon < Settings.height; j++) {
             Crafty.e("Glass").attr({x: i * Settings.poligon, y: j * Settings.poligon});
             if ((i + j > 0) && (Crafty.math.randomInt(0, 7) < 4)) {
-                for (var x = 0; (x)*Settings.mini_poligon < Settings.poligon; x++) {
-                    for (var y = 0; (y)*Settings.mini_poligon < Settings.poligon; y++) {
+                for (var x = 0; x*Settings.mini_poligon < Settings.poligon; x++) {
+                    for (var y = 0; y*Settings.mini_poligon < Settings.poligon; y++) {
                         Crafty.e("Ground").attr({
                             x: i * Settings.poligon + x*Settings.mini_poligon,
                             y: j * Settings.poligon + y*Settings.mini_poligon,
@@ -37,6 +37,22 @@ Crafty.scene("main", function() {
             }
 
         }
+    }
+    
+    if (Settings.level % 2) {
+        var x = 0;
+        var y = 0;
+        while (stonesCoords.search(joinCoord(x, y)) >= 0) {
+            x = Crafty.math.randomInt(2, Settings.width / Settings.poligon - 1);
+            y = Crafty.math.randomInt(2, Settings.height / Settings.poligon - 1);
+        }
+        Crafty.e("Bonus").attr({
+            x: x * Settings.poligon,
+            y: y * Settings.poligon,
+            w: Settings.poligon,
+            h: Settings.poligon
+        });
+        stonesCoords += joinCoord(x, y);
     }
 
     while (flower_count > 0) {
@@ -61,6 +77,7 @@ Crafty.scene("main", function() {
                         w: Settings.poligon,
                         h: Settings.poligon
                     });
+                    stonesCoords += joinCoord(i, j);
                 }
             }
         }

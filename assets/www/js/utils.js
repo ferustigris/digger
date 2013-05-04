@@ -1,10 +1,42 @@
 function exit() {
     var thisWindow = window.open("menu.html",'_self');
-    //var exit = confirm("Хотите закрыть страницу?");
-    //if(exit){
     thisWindow.close();
-    //}
+    navigator.app.exitApp()
 }
+
+var Sound = function () {
+    var self = this;
+    this.sound = $.jStorage.get("sound");
+    
+    this.off = function () {
+        self.sound = false;
+        $('.soundLabel').removeClass('activeLabel').addClass('inactiveLabel');
+        $.jStorage.set("sound", self.self.sound);
+        return self.self;
+    }
+    
+    this.on = function () {
+        self.sound = true;
+        $('.soundLabel').removeClass('inactiveLabel').addClass('activeLabel');
+        $.jStorage.set("sound", self.sound);
+        return self;
+    }
+    
+    this.switch = function () {
+        if (self.sound) {
+            self.off();
+        } else {
+            self.on();
+        }
+        return self;
+    }
+    
+    return this;
+}
+
+$(window).load(function () {
+    Sound().switch().switch();
+});
 
 var Level = function (game) {
     if ($.jStorage.get("scope"))

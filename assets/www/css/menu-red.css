@@ -6,6 +6,14 @@
   margin: 20% auto;
   }
 
+.inactiveLabel {
+    color: gray;
+}
+
+.activeLabel {
+    color: black;
+}
+
 #cssmenu ul, #cssmenu li {
   list-style: none;
   margin: 0;
