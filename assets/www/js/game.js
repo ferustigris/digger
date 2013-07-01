@@ -79,19 +79,19 @@ require(AllScripts, function() {
     
     Crafty.audio.add("drips", [
         "sounds/drips4.wav",
-        "sounds/drips4.mp3",
+        //"sounds/drips4.mp3",
     ]);
     Crafty.audio.add("money", [
-        "sounds/money.wav",
-        "sounds/money.mp3",
+        "sounds/money.wav"
+        //"sounds/money.mp3",
     ]);
     Crafty.audio.add("namnam", [
         "sounds/apple.wav",
-        "sounds/apple.mp3",
+        //"sounds/apple.mp3",
     ]);
     Crafty.audio.add("chick", [
         "sounds/chick.wav",
-        "sounds/chick.mp3",
+        //"sounds/chick.mp3"
     ]);
 
     // запускаем первую сцену
