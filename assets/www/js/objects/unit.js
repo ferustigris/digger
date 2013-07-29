@@ -23,6 +23,7 @@ Crafty.c('Unit', {
         });
 
         this.onHit("hard_stone", function(e) {
+            console.log('hard_stone')
             var stone = e[0].obj;
             console.log("On hit with stone");
             if (stone._falling) {

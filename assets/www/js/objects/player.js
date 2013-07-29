@@ -52,6 +52,7 @@ Crafty.c('Player', {
         });
 
         this.onHit("hard_ground", function(e) {
+            console.log("hit with ground");
             var object = e[0].obj;
             object.clear();
         });
