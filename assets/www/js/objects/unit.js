@@ -19,27 +19,6 @@ Crafty.c('Unit', {
         // находятся в дочерних компонентах
 
         this.bind("Moved", function(e) {
-            console.log('moved! x=' + this.x + ', y=' + this.y + ', e.x=' + e.x + ', e.y=' + e.y)
-            if(this.x > e.x) {
-                if(!this.isPlaying("walk_left")) {
-                    this.stop().animate("walk_left", 10);
-                }
-            }
-            if(this.x < e.x) {
-                if(!this.isPlaying("walk_right")) {
-                    this.stop().animate("walk_right", 10);
-                }
-            }
-            if(this.y > e.y) {
-                if(!this.isPlaying("walk_up")) {
-                    this.stop().animate("walk_up", 10);
-                }
-            }
-            if(this.y < e.y) {
-                if(!this.isPlaying("walk_down")) {
-                    this.stop().animate("walk_down", 10);
-                }
-            }
             this.checkUnitOutOfRange();
         });
 
@@ -72,6 +51,8 @@ Crafty.c('Unit', {
     },
 
     stopOnHit: function(object) {
+        console.log('stopOnHit')
+        
         if ((this.x + Settings.poligon) > object.x && (this.x + Settings.poligon/2) < object.x) {
             this.x = object.x - Settings.poligon;
         } else

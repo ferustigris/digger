@@ -24,9 +24,11 @@ var AllScripts = [
     'js/objects/cross',
     'js/objects/unit',
     'js/objects/player',
+    'js/objects/player_sprite',
     'js/objects/fourway_ai',
     'js/objects/fourway_touch',
     'js/objects/monster',
+    'js/objects/monster_sprite',
     'js/objects/scope',
     'js/objects/bonus',
     // scenes

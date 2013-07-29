@@ -1,20 +1,13 @@
 Crafty.c('Player', {
     init: function() {
         this.requires("Unit"); // подключаем компонент юнита
-        this.requires("digger"); // подключаем спрайт игрока
         this.requires("Fourway"); // подключаем компонент движения
         this.requires("FourwayTouch"); // подключаем компонент движения
-        this.requires("Mouse");
         this.requires("Collision"); // компонент столкновения
 
         this.collision(); // подключаем компонент столкновения
 
         this.attr({x: 0, y: 0, z: 1, w: 100, h: 100});
-
-        this.animate("walk_left", 0, 0, 0);
-        this.animate("walk_right", 2, 0, 2);
-        this.animate("walk_up", 1, 0, 1);
-        this.animate("walk_down", 3, 0, 3);
 
         this.fourway(Settings.speed);
 
@@ -83,7 +76,6 @@ Crafty.c('Player', {
 
     },
     clear: function() {
-        this.removeComponent('digger');
         this.removeComponent('Player');
         this.destroy();
     }

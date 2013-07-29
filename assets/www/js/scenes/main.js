@@ -71,7 +71,7 @@ Crafty.scene("main", function() {
                     });
                     Settings.flower_count += 1;
                     flower_count -= 1;
-                    Crafty.e("Monster").attr({
+                    Crafty.e("MonsterSprite").attr({
                         x: i * Settings.poligon,
                         y: j * Settings.poligon,
                         w: Settings.poligon,
@@ -83,7 +83,7 @@ Crafty.scene("main", function() {
         }
     }
 
-    Crafty.e("Player").attr({x: 0, y: 0, z: 1, w: Settings.poligon, h: Settings.poligon});
+    Crafty.e("PlayerSprite").attr({x: 0, y: 0, z: 1, w: Settings.poligon, h: Settings.poligon});
 
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, z: 1, scope: Settings.scope});
 
