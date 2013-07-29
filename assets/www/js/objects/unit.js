@@ -19,30 +19,27 @@ Crafty.c('Unit', {
         // находятся в дочерних компонентах
 
         this.bind("Moved", function(e) {
-            if(this.x < e.x) {
+            console.log('moved! x=' + this.x + ', y=' + this.y + ', e.x=' + e.x + ', e.y=' + e.y)
+            if(this.x > e.x) {
                 if(!this.isPlaying("walk_left")) {
                     this.stop().animate("walk_left", 10);
                 }
             }
-            if(this.x > e.x) {
+            if(this.x < e.x) {
                 if(!this.isPlaying("walk_right")) {
                     this.stop().animate("walk_right", 10);
                 }
             }
-            if(this.y < e.y) {
+            if(this.y > e.y) {
                 if(!this.isPlaying("walk_up")) {
                     this.stop().animate("walk_up", 10);
                 }
             }
-            if(this.y > e.y) {
+            if(this.y < e.y) {
                 if(!this.isPlaying("walk_down")) {
                     this.stop().animate("walk_down", 10);
                 }
             }
-            this.checkUnitOutOfRange();
-        });
-
-        this.bind("EnterFrame", function() {
             this.checkUnitOutOfRange();
         });
 

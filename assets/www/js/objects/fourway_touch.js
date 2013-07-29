@@ -8,6 +8,7 @@ Crafty.c('FourwayTouch', {
             .bind('MouseDown', function(e) {
                 var dx = e.x - object.x - object.w/2;
                 var dy = e.y - object.y - object.h/2;
+                
                 if (Math.abs(dx) > Math.abs(dy)) {
                     dx = object.x + object.w*(dx/Math.abs(dx));
                     dy = object.y;
@@ -15,6 +16,8 @@ Crafty.c('FourwayTouch', {
                     dx = object.x + 0;
                     dy = object.y + object.h*(dy/Math.abs(dy));
                 }
+                
+                object.trigger('Moved', {x: dx, y: dy})
                 object.tween({x: dx, y: dy}, 30)
             })
     },
