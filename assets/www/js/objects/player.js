@@ -17,7 +17,6 @@ Crafty.c('Player', {
         this.animate("walk_down", 3, 0, 3);
 
         this.fourway(Settings.speed);
-        this.fourwayTouch(Settings.speed);
 
         this.onHit("bag", function(e) {
             var object = e[0].obj;
