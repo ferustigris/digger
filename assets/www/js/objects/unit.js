@@ -9,19 +9,6 @@ Crafty.c('Unit', {
 
         this.collision(); // подключаем компонент столкновения
 
-        // отрабатывем событие столкновения с камнем
-        /*this.onHit("hard_stone", function(e) {
-            var object = e[0].obj;
-            this.stopOnHit(object);
-        });*/
-
-        // анимация движения, сами указатели на спрайты
-        // находятся в дочерних компонентах
-
-        this.bind("Moved", function(e) {
-            this.checkUnitOutOfRange();
-        });
-
         this.onHit("hard_stone", function(e) {
             var stone = e[0].obj;
             if (stone._falling) {
@@ -39,24 +26,25 @@ Crafty.c('Unit', {
                 isCollision = true
         });
 
-        return !isCollision
+        return !isCollision && !this.isUnitOutOfRange(x, y)
     },
 
-    checkUnitOutOfRange: function() {
+    isUnitOutOfRange: function(x, y) {
             var maxX = Settings.width - Settings.poligon;
-            if (this.x > maxX) {
-                this.x = maxX;
+            if (x > maxX) {
+                return true
             }
             var maxY = Settings.height - Settings.poligon;
-            if (this.y > maxY) {
-                this.y = maxY;
+            if (y > maxY) {
+                return true
             }
-            if (this.x < 0) {
-                this.x = 0;
+            if (x < 0) {
+                return true
             }
-            if (this.y < 0) {
-                this.y = 0;
+            if (y < 0) {
+                return true
             }
+            return false
     },
 
     stopOnHit: function(object) {

@@ -28,7 +28,7 @@ Crafty.c('Player', {
                 }
             });
     
-            return !isCollision
+            return !isCollision && !player.isUnitOutOfRange(x, y)
         }
 
 

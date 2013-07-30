@@ -67,12 +67,12 @@ Crafty.scene("main", function() {
                     });
                     Settings.flower_count += 1;
                     flower_count -= 1;
-                    /*Crafty.e("MonsterSprite").attr({
+                    Crafty.e("MonsterSprite").attr({
                         x: i * Settings.poligon,
                         y: j * Settings.poligon,
                         w: Settings.poligon,
                         h: Settings.poligon
-                    });*/
+                    });
                     stonesCoords += joinCoord(i, j);
                 }
             }

@@ -18,10 +18,10 @@ Crafty.c('FourwayAI', {
         var dx = stepDirection ? 0 : step;
         var dy = stepDirection ? step : 0;
 
-        dx = this.w*dx;
-        dy = this.h*dy;
+        dx = this.x + this.w*dx;
+        dy = this.y + this.h*dy;
         
-        if (this.isCanMoveTo(dx, dy)) {
+        if (this.isCanMoveTo(dx + this.w/2, dy + this.h/2)) {
             this.trigger('Moved', {x: dx, y: dy})
             this.tween({x: dx, y: dy}, 50)
         }
