@@ -20,8 +20,10 @@ Crafty.c('FourwayAI', {
 
         dx = this.w*dx;
         dy = this.h*dy;
-            
-        this.trigger('Moved', {x: dx, y: dy})
-        this.tween({x: dx, y: dy}, 50)
+        
+        if (this.isCanMoveTo(dx, dy)) {
+            this.trigger('Moved', {x: dx, y: dy})
+            this.tween({x: dx, y: dy}, 50)
+        }
     }
 });

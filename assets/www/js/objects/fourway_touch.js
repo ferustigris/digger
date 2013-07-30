@@ -17,8 +17,10 @@ Crafty.c('FourwayTouch', {
                     dy = object.y + object.h*(dy/Math.abs(dy));
                 }
                 
-                object.trigger('Moved', {x: dx, y: dy})
-                object.tween({x: dx, y: dy}, 30)
+                if (object.isCanMoveTo(dx + object.w/2, dy + object.h/2)) {
+                    object.trigger('Moved', {x: dx, y: dy})
+                    object.tween({x: dx, y: dy}, 30)
+                }
             })
     },
 });

@@ -7,9 +7,30 @@ Crafty.c('Player', {
 
         this.collision(); // подключаем компонент столкновения
 
-        this.attr({x: 0, y: 0, z: 1, w: 100, h: 100});
+        this.attr({x: 0, y: 0, z: 1, w: 100, h: 100})
 
-        this.fourway(Settings.speed);
+        this.fourway(Settings.speed)
+        
+        var player = this
+        this.isCanMoveTo = function(x, y) {
+            var isCollision = false;
+            Crafty("hard_stone").each(function(i) {
+                if (this.isAt(x, y)) {
+                    var dx = x - player.x - player.w/2
+                    var dy = y - player.y - player.h/2
+                    var newX = this.x + dx
+                    var newY = this.y + dy
+                    if (this.isCanMoveTo(newX, newY)) {
+                        this.tween({x: newX - this.w/2, y: newY - this.h/2}, 30)
+                    } else {
+                        isCollision = true
+                    }
+                }
+            });
+    
+            return !isCollision
+        }
+
 
         this.onHit("bag", function(e) {
             var object = e[0].obj;
@@ -57,17 +78,6 @@ Crafty.c('Player', {
             object.clear();
         });
 
-        this.onHit("hard_stone", function(e) {
-            console.log("hit with stone");
-            var stone = e[0].obj;
-            if (this.isPlaying("walk_right") && player.x < stone.x) {
-                stone.x = player.x + Settings.poligon;
-            }
-            if (this.isPlaying("walk_left") && player.x > stone.x) {
-                stone.x = player.x - stone.w;
-            }
-        });
-
         this.bind("onDue", function () {
             this.clean();
             setTimeout(function() {
@@ -76,6 +86,7 @@ Crafty.c('Player', {
         });
 
     },
+
     clear: function() {
         this.removeComponent('Player');
         this.destroy();

@@ -11,27 +11,23 @@ Crafty.scene("main", function() {
 
     for(var i = 0; i*Settings.poligon < Settings.width; i++) {
         for(var j = 0; j*Settings.poligon < Settings.height; j++) {
-            Crafty.e("Glass").attr({x: i * Settings.poligon, y: j * Settings.poligon});
-            if ((i + j > 0) && (Crafty.math.randomInt(0, 7) < 4)) {
-                for (var x = 0; x*Settings.mini_poligon < Settings.poligon; x++) {
-                    for (var y = 0; y*Settings.mini_poligon < Settings.poligon; y++) {
+            Crafty.e("Sand").attr({x: i * Settings.poligon, y: j * Settings.poligon});
+            if ((i + j > 0) && (Crafty.math.randomInt(0, 6) < 4)) {
                         Crafty.e("Ground").attr({
-                            x: i * Settings.poligon + x*Settings.mini_poligon,
-                            y: j * Settings.poligon + y*Settings.mini_poligon,
-                            w: Settings.mini_poligon,
-                            h: Settings.mini_poligon
+                            x: i * Settings.poligon,
+                            y: j * Settings.poligon,
+                            w: Settings.poligon,
+                            h: Settings.poligon
                         });
-                    }
-                }
                 stonesCoords += joinCoord(i, j);
             } else
 
             if ((i + j > 0) && !Crafty.math.randomInt(0, 4)) {
                 Crafty.e("Stone").attr({
-                    x: i * Settings.poligon + 10,
-                    y: j * Settings.poligon + 20,
-                    w: Settings.poligon - 20,
-                    h: Settings.poligon - 20
+                    x: i * Settings.poligon,// + 10,
+                    y: j * Settings.poligon,// + 20,
+                    w: Settings.poligon,// - 20,
+                    h: Settings.poligon// - 20
                     });
                 stonesCoords += joinCoord(i, j);
             }

@@ -10,10 +10,10 @@ Crafty.c('Unit', {
         this.collision(); // подключаем компонент столкновения
 
         // отрабатывем событие столкновения с камнем
-        this.onHit("hard_stone", function(e) {
+        /*this.onHit("hard_stone", function(e) {
             var object = e[0].obj;
             this.stopOnHit(object);
-        });
+        });*/
 
         // анимация движения, сами указатели на спрайты
         // находятся в дочерних компонентах
@@ -23,15 +23,23 @@ Crafty.c('Unit', {
         });
 
         this.onHit("hard_stone", function(e) {
-            console.log('hard_stone')
             var stone = e[0].obj;
-            console.log("On hit with stone");
             if (stone._falling) {
                 this.trigger('onDue');
                 Crafty.e("Cross").attr({x: this.x, y: this.y});
                 this.clean();
             }
         });
+    },
+    
+    isCanMoveTo: function(x, y) {
+        var isCollision = false;
+        Crafty("hard_object").each(function(i) {
+            if (this.isAt(x, y))
+                isCollision = true
+        });
+
+        return !isCollision
     },
 
     checkUnitOutOfRange: function() {
