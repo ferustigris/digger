@@ -20,8 +20,8 @@ Crafty.c('Player', {
                     var dy = y - player.y - player.h/2
                     var newX = this.x + dx
                     var newY = this.y + dy
-                    if (this.isCanMoveTo(newX, newY)) {
-                        this.tween({x: newX - this.w/2, y: newY - this.h/2}, 30)
+                    if (this.isCanMoveTo(newX + this.w/2, newY + this.h/2)) {
+                        this.tween({x: newX, y: newY}, 30)
                     } else {
                         isCollision = true
                     }
