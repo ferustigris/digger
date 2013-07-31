@@ -1,11 +1,17 @@
 Crafty.c('FourwayTouch', {
     init: function() {
-        this.requires("2D");
-        this.requires("Tween");
-        var object = this;
+        this.requires("2D")
+        this.requires("Tween")
+        
+        this.inMotion = false
+        
+        var object = this
         Crafty.e("2D, DOM, Color, Mouse")
             .attr({ w: 10000, h: 10000 })
             .bind('MouseDown', function(e) {
+                if (object.inMotion)
+                    return
+                    
                 var dx = e.x - object.x - object.w/2;
                 var dy = e.y - object.y - object.h/2;
                 
@@ -20,7 +26,11 @@ Crafty.c('FourwayTouch', {
                 if (object.isCanMoveTo(dx + object.w/2, dy + object.h/2)) {
                     object.trigger('Moved', {x: dx, y: dy})
                     object.tween({x: dx, y: dy}, 30)
+                    object.inMotion = true
                 }
             })
+        this.bind("TweenEnd", function() {
+            object.inMotion = false    
+        })
     },
 });
