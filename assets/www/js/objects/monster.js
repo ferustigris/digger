@@ -14,7 +14,7 @@ Crafty.c('Monster', {
             this.stopOnHit(object);
         });
 
-        this.fourway_ai(3);//Settings.speed);
+        this.fourway_ai(Settings.speed);
         
         this.bind("onDue", function() {
             Settings.scope += 100;
@@ -24,5 +24,6 @@ Crafty.c('Monster', {
             if (Settings.sound)
                 Crafty.audio.play("chick");
         })
+
     }
 });
