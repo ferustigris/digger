@@ -34,10 +34,6 @@ var Sound = function () {
     return this;
 }
 
-$(window).load(function () {
-    Sound().soundSwitch().soundSwitch();
-});
-
 var Level = function (game) {
     if ($.jStorage.get("scope"))
         game.scope = $.jStorage.get("scope");

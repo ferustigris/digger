@@ -8,9 +8,9 @@ body {
 
 .about {
   padding: 0;
-  margin: 0;
   border: 0; 
   text-align: center;
+  text-height: "48px";
   margin: 20% auto;
   color: white;
 }

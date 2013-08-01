@@ -21,18 +21,10 @@ Crafty.scene("top", function() {
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX - 100, y: imageY - h*count/2 +  + i*h})
             .text(topItem.name)
-            .css({
-                "text-align": "center",
-                "color": "white",
-                "font-size": "40px"
-            });        
+            .textFont({ size: '20px', weight: 'bold' })
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX + 100, y: imageY - h*count/2 +  + i*h})
             .text(topItem.value)
-            .css({
-                "text-align": "center",
-                "color": "white",
-                "font-size": "40px"
-            });        
+            .textFont({ size: '20px', weight: 'bold' })
     }
 });

@@ -17,12 +17,12 @@ Crafty.scene("lose", function() {
     var imageY = Crafty.DOM.window.height/2;
 
     Crafty.e("2D, DOM, Text")
-        .attr({w: 200, h: 200, x: imageX - 100, y: imageY - 100})
+        .attr({w: Settings.width, h: 200, x: imageX - Settings.width/2, y: imageY - 100})
         .text(isGameOver ? "Game over" : "You loose")
+        .textFont({ size: '48px'})
         .css({
             "text-align": "center",
-            "color": "white",
-            "font-size": "40px"
+            "color": "white"
         });
 
     setTimeout(function() {
