@@ -22,7 +22,7 @@ Crafty.c('Monster', {
             console.log("scope=" + Settings.scope);
             this.clean();
             if (Settings.sound)
-                Crafty.audio.play("chick");
+                Game.sounds.chick.play()
         })
 
     }

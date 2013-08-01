@@ -11,7 +11,8 @@ var Settings = {
 
 var Game = {
     scopeView: {},
-    level: {}
+    level: {},
+    sounds: {}
 };
 
 var AllScripts = [
@@ -37,7 +38,8 @@ var AllScripts = [
     'js/scenes/lose',
     //utils
     'js/storage.js',
-    'js/utils.js'
+    'js/utils.js',
+    'js/phonegap-1.4.1.js'
 ];
 
 require(AllScripts, function() {
@@ -82,18 +84,12 @@ require(AllScripts, function() {
         "sounds/drips4.wav",
         //"sounds/drips4.mp3",
     ]);
-    Crafty.audio.add("money", [
-        "sounds/money.wav"
-        //"sounds/money.mp3",
-    ]);
-    Crafty.audio.add("namnam", [
-        "sounds/apple.wav",
-        //"sounds/apple.mp3",
-    ]);
-    Crafty.audio.add("chick", [
-        "sounds/chick.wav",
-        //"sounds/chick.mp3"
-    ]);
+
+    Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
+    Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
+    Game.sounds.namnam = new Media("/android_asset/www/sounds/apple.wav")
+    Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
+    Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
 
     // запускаем первую сцену
     Crafty.scene("loading");
