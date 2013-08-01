@@ -6,7 +6,7 @@ function exit() {
 
 var Sound = function () {
     var self = this;
-    this.sound = $.jStorage.get("sound");
+    this.sound = $.jStorage.get("sound", true);
     
     this.off = function () {
         self.sound = false;

@@ -79,11 +79,6 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/cross.png", {
         cross: [0,0]
     });
-    
-    Crafty.audio.add("drips", [
-        "sounds/drips4.wav",
-        //"sounds/drips4.mp3",
-    ]);
 
     Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
     Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
