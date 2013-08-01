@@ -63,10 +63,9 @@ Crafty.c('Player', {
 
         var player = this;
         this.onHit("monster", function(e) {
-            player.clear(); 
             if (Settings.sound)
                 Game.sounds.namnam.play();
-            
+            player.clear();            
             setTimeout(function() {
                 Crafty.scene("lose");
             }, 500);

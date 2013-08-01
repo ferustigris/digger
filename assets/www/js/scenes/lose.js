@@ -24,6 +24,8 @@ Crafty.scene("lose", function() {
             "text-align": "center",
             "color": "white"
         });
+    if (Settings.sound)
+        Game.sounds.laught.play();
 
     setTimeout(function() {
         Crafty.scene("main");

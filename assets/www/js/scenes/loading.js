@@ -13,6 +13,7 @@ Crafty.scene("loading", function() {
 
     while (splashSizes[splashSizeIndex] > Math.min(Crafty.DOM.window.width, Crafty.DOM.window.height)) {
         splashSizeIndex++;
+	if(splashSizeIndex == splashSizes.length - 1)break;
     }
 
     var imgWidth = splashSizes[splashSizeIndex];

@@ -12,6 +12,8 @@ Crafty.c('Unit', {
         this.onHit("hard_stone", function(e) {
             var stone = e[0].obj;
             if (stone._falling) {
+		    if (Settings.sound)
+		        Game.sounds.hit.play()
                 this.trigger('onDue');
                 Crafty.e("Cross").attr({x: this.x, y: this.y});
                 this.clean();
@@ -30,11 +32,11 @@ Crafty.c('Unit', {
     },
 
     isUnitOutOfRange: function(x, y) {
-            var maxX = Settings.width - Settings.poligon;
+            var maxX = Settings.width;
             if (x > maxX) {
                 return true
             }
-            var maxY = Settings.height - Settings.poligon;
+            var maxY = Settings.height;
             if (y > maxY) {
                 return true
             }
@@ -45,23 +47,6 @@ Crafty.c('Unit', {
                 return true
             }
             return false
-    },
-
-    stopOnHit: function(object) {
-        console.log('stopOnHit')
-        
-        if ((this.x + Settings.poligon) > object.x && (this.x + Settings.poligon/2) < object.x) {
-            this.x = object.x - Settings.poligon;
-        } else
-        if (this.x < (object.x + object.w) && this.x > (object.x + object.w/2)) {
-            this.x = object.x + object.w;
-        }
-        if (this.y < object.y + object.h && this.y > object.y + object.h/2) {
-            this.y = object.y + object.h;
-        } else
-        if ((this.y + Settings.poligon) > object.y && (this.y + Settings.poligon/2) < object.y) {
-            this.y = object.y - Settings.poligon;
-        }
     },
 
     clean: function () {

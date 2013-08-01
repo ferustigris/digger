@@ -87,7 +87,8 @@ require(AllScripts, function() {
 
     Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
     Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
-    Game.sounds.namnam = new Media("/android_asset/www/sounds/apple.wav")
+    Game.sounds.namnam = new Media("/android_asset/www/sounds/burp.wav")
+    Game.sounds.water = new Media("/android_asset/www/sounds/water.wav")
     Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
     Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
 
