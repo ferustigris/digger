@@ -13,6 +13,7 @@ Crafty.scene("loading", function() {
 
     while (splashSizes[splashSizeIndex] > Math.min(Crafty.DOM.window.width, Crafty.DOM.window.height)) {
         splashSizeIndex++;
+	if(splashSizeIndex == splashSizes.length - 1)break;
     }
 
     var imgWidth = splashSizes[splashSizeIndex];
@@ -30,10 +31,7 @@ Crafty.scene("loading", function() {
         y: imageY
     }).image(imgName);
 
-    Crafty.load([imgName], function() {
-        // выполним это действие, после того как images/sprite.png будет загружен
-        setTimeout(function() {
-          Crafty.scene("main");
-        }, 1500);
-    });
+    setTimeout(function() {
+        Crafty.scene("main");
+    }, 1500);
 });

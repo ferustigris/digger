@@ -9,29 +9,29 @@ Crafty.scene("main", function() {
         return x + "," + y + ";";
     }
 
+    console.log("Main scene started!")
+
     for(var i = 0; i*Settings.poligon < Settings.width; i++) {
+        console.log("Main scene ground")
         for(var j = 0; j*Settings.poligon < Settings.height; j++) {
-            Crafty.e("Glass").attr({x: i * Settings.poligon, y: j * Settings.poligon});
-            if ((i + j > 0) && (Crafty.math.randomInt(0, 7) < 4)) {
-                for (var x = 0; x*Settings.mini_poligon < Settings.poligon; x++) {
-                    for (var y = 0; y*Settings.mini_poligon < Settings.poligon; y++) {
+	    console.log("Main scene ground")
+            Crafty.e("Sand").attr({x: i * Settings.poligon, y: j * Settings.poligon});
+            if ((i + j > 0) && (Crafty.math.randomInt(0, 6) < 4)) {
                         Crafty.e("Ground").attr({
-                            x: i * Settings.poligon + x*Settings.mini_poligon,
-                            y: j * Settings.poligon + y*Settings.mini_poligon,
-                            w: Settings.mini_poligon,
-                            h: Settings.mini_poligon
+                            x: i * Settings.poligon,
+                            y: j * Settings.poligon,
+                            w: Settings.poligon,
+                            h: Settings.poligon
                         });
-                    }
-                }
                 stonesCoords += joinCoord(i, j);
             } else
 
             if ((i + j > 0) && !Crafty.math.randomInt(0, 4)) {
                 Crafty.e("Stone").attr({
-                    x: i * Settings.poligon + 10,
-                    y: j * Settings.poligon + 20,
-                    w: Settings.poligon - 20,
-                    h: Settings.poligon - 20
+                    x: i * Settings.poligon,// + 10,
+                    y: j * Settings.poligon,// + 20,
+                    w: Settings.poligon,// - 20,
+                    h: Settings.poligon// - 20
                     });
                 stonesCoords += joinCoord(i, j);
             }
@@ -45,6 +45,7 @@ Crafty.scene("main", function() {
         while (stonesCoords.search(joinCoord(x, y)) >= 0) {
             x = Crafty.math.randomInt(2, Settings.width / Settings.poligon - 1);
             y = Crafty.math.randomInt(2, Settings.height / Settings.poligon - 1);
+	    console.log("Main scene koords")
         }
         Crafty.e("Bonus").attr({
             x: x * Settings.poligon,
@@ -57,12 +58,13 @@ Crafty.scene("main", function() {
 
     while (flower_count > 0) {
         //generate the grass along the x-axis
-        for(var i = 1; (i + 1)*Settings.poligon < Settings.width; i++) {
+        for(var i = 1; i*Settings.poligon < Settings.width; i++) {
             //generate the grass along the y-axis
-            for(var j = 1; (j + 1)*Settings.poligon < Settings.height; j++) {
+	    console.log("Main scene flowers")
+            for(var j = 1; j*Settings.poligon < Settings.height; j++) {
                 if (stonesCoords.search(joinCoord(i, j)) >= 0)
                     continue;
-                if ((i + j > 0) && (flower_count > 0) && (!Crafty.math.randomInt(0, 5))) {
+                if ((flower_count > 0) && (!Crafty.math.randomInt(0, 5))) {
                     Crafty.e("Flower").attr({
                         x: i * Settings.poligon,
                         y: j * Settings.poligon,
@@ -71,7 +73,7 @@ Crafty.scene("main", function() {
                     });
                     Settings.flower_count += 1;
                     flower_count -= 1;
-                    Crafty.e("Monster").attr({
+                    Crafty.e("MonsterSprite").attr({
                         x: i * Settings.poligon,
                         y: j * Settings.poligon,
                         w: Settings.poligon,
@@ -83,8 +85,8 @@ Crafty.scene("main", function() {
         }
     }
 
-    Crafty.e("Player").attr({x: 0, y: 0, z: 1, w: Settings.poligon, h: Settings.poligon});
+    Crafty.e("PlayerSprite").attr({x: 0, y: 0, z: 1, w: Settings.poligon, h: Settings.poligon});
 
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, z: 1, scope: Settings.scope});
-
+    console.log("Main scene stoped!")
 });

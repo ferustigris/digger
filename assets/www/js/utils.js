@@ -6,7 +6,7 @@ function exit() {
 
 var Sound = function () {
     var self = this;
-    this.sound = $.jStorage.get("sound");
+    this.sound = $.jStorage.get("sound", true);
     
     this.off = function () {
         self.sound = false;
@@ -33,10 +33,6 @@ var Sound = function () {
     
     return this;
 }
-
-$(window).load(function () {
-    Sound().soundSwitch().soundSwitch();
-});
 
 var Level = function (game) {
     if ($.jStorage.get("scope"))

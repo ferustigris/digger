@@ -2,7 +2,6 @@ var Settings = {
     width: 800, // ширина игрового поля
     height: 600, // высота
     poligon: 80, // размер полигона 16x16
-    mini_poligon: 40, // размер полигона 16x16
     scope: 0,
     level: 2, // текущий уровень
     speed: 1, // current monster speed
@@ -12,7 +11,8 @@ var Settings = {
 
 var Game = {
     scopeView: {},
-    level: {}
+    level: {},
+    sounds: {}
 };
 
 var AllScripts = [
@@ -20,13 +20,15 @@ var AllScripts = [
     'js/objects/flower',
     'js/objects/stone',
     'js/objects/ground',
-    'js/objects/glass',
+    'js/objects/sand',
     'js/objects/cross',
     'js/objects/unit',
     'js/objects/player',
+    'js/objects/player_sprite',
     'js/objects/fourway_ai',
     'js/objects/fourway_touch',
     'js/objects/monster',
+    'js/objects/monster_sprite',
     'js/objects/scope',
     'js/objects/bonus',
     // scenes
@@ -36,7 +38,8 @@ var AllScripts = [
     'js/scenes/lose',
     //utils
     'js/storage.js',
-    'js/utils.js'
+    'js/utils.js',
+    'js/phonegap-1.4.1.js'
 ];
 
 require(AllScripts, function() {
@@ -54,17 +57,17 @@ require(AllScripts, function() {
         monster: [0,0]
     });
     // подгружаем спрайт
-    Crafty.sprite(Settings.mini_poligon, "images/ground.jpg", {
+    Crafty.sprite(Settings.poligon, "images/ground.jpg", {
         ground: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/glass.jpg", {
-        glass: [0,0]
+    Crafty.sprite(Settings.poligon, "images/sand.jpg", {
+        sand: [0,0]
     });
     // подгружаем спрайт
-    Crafty.sprite(Settings.poligon, "images/granit1.png", {
+    Crafty.sprite(Settings.poligon, "images/granit1.jpg", {
         granit1: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/granit2.png", {
+    Crafty.sprite(Settings.poligon, "images/granit2.jpg", {
         granit2: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/bag.png", {
@@ -76,23 +79,13 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/cross.png", {
         cross: [0,0]
     });
-    
-    Crafty.audio.add("drips", [
-        "sounds/drips4.wav",
-        //"sounds/drips4.mp3",
-    ]);
-    Crafty.audio.add("money", [
-        "sounds/money.wav"
-        //"sounds/money.mp3",
-    ]);
-    Crafty.audio.add("namnam", [
-        "sounds/apple.wav",
-        //"sounds/apple.mp3",
-    ]);
-    Crafty.audio.add("chick", [
-        "sounds/chick.wav",
-        //"sounds/chick.mp3"
-    ]);
+
+    Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
+    Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
+    Game.sounds.namnam = new Media("/android_asset/www/sounds/burp.wav")
+    Game.sounds.water = new Media("/android_asset/www/sounds/water.wav")
+    Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
+    Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
 
     // запускаем первую сцену
     Crafty.scene("loading");
