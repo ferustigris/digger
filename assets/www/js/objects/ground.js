@@ -10,6 +10,7 @@ Crafty.c('Ground', {
     },
 
     clear: function() {
+        this.removeComponent('hard_object');
         this.removeComponent('hard_ground');
         this.removeComponent('ground');
         this.removeComponent('Ground');
