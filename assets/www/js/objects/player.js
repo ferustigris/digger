@@ -3,33 +3,31 @@ Crafty.c('Player', {
         this.requires("Unit"); // подключаем компонент юнита
         this.requires("Fourway"); // подключаем компонент движения
         this.requires("FourwayTouch"); // подключаем компонент движения
-        this.requires("Collision"); // компонент столкновения
+        this.requires("PlayerSprite");
 
-        this.collision(); // подключаем компонент столкновения
+        this.attr({x: 0, y: 0, w: 100, h: 100});
 
-        this.attr({x: 0, y: 0, z: 1, w: 100, h: 100})
-
-        this.fourway(Settings.speed)
+        this.fourway(Settings.speed);
         
-        var player = this
+        var player = this;
         this.isCanMoveTo = function(x, y) {
             var isCollision = false;
             Crafty("hard_stone").each(function(i) {
                 if (this.isAt(x, y)) {
-                    var dx = x - player.x - player.w/2
-                    var dy = y - player.y - player.h/2
-                    var newX = this.x + dx
-                    var newY = this.y + dy
+                    var dx = x - player.x - player.w/2;
+                    var dy = y - player.y - player.h/2;
+                    var newX = this.x + dx;
+                    var newY = this.y + dy;
                     if (this.isCanMoveTo(newX + this.w/2, newY + this.h/2)) {
-                        this.tween({x: newX, y: newY}, 30)
+                        this.tween({x: newX, y: newY}, 30);
                     } else {
-                        isCollision = true
+                        isCollision = true;
                     }
                 }
             });
     
-            return !isCollision && !player.isUnitOutOfRange(x, y)
-        }
+            return !isCollision && !player.isUnitOutOfRange(x, y);
+        };
 
 
         this.onHit("bag", function(e) {
@@ -61,11 +59,11 @@ Crafty.c('Player', {
                 Game.sounds.money.play();
         });
 
-        var player = this;
-        this.onHit("monster", function(e) {
+        this.onHit("hard_monster", function(e) {
+            console.log("hit with Monster!");
             if (Settings.sound)
                 Game.sounds.namnam.play();
-            player.clear();            
+            player.clear();
             setTimeout(function() {
                 Crafty.scene("lose");
             }, 500);
@@ -78,7 +76,7 @@ Crafty.c('Player', {
         });
 
         this.bind("onDue", function () {
-            this.clean();
+            player.clean();
             setTimeout(function() {
                 Crafty.scene("lose");
             }, 1500);
