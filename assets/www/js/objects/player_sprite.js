@@ -1,7 +1,7 @@
 Crafty.c('PlayerSprite', {
     init: function() {
-        this.requires("Player");
         this.requires("digger");
+        this.requires("SpriteAnimation");
 
         this.animate("walk_left", 0, 0, 0);
         this.animate("walk_right", 2, 0, 2);
@@ -33,7 +33,6 @@ Crafty.c('PlayerSprite', {
     },
     clear: function() {
         this.removeComponent('digger');
-        this.removeComponent('Player');
         this.removeComponent('PlayerSprite');
         this.destroy();
     }

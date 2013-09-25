@@ -1,9 +1,11 @@
 Crafty.c('Monster', {
     init: function() {
         this.requires("Unit");
+        this.requires("MonsterSprite");
         this.requires("FourwayAI");
+        this.requires("hard_monster");
 
-        this.attr({x: 0, y: 0, z: 1});
+        this.attr({x: 0, y: 0});
 
         this.fourway_ai(Settings.speed);
         
