@@ -9,6 +9,7 @@ Crafty.c('Scope', {
             .attr({w: this.w, h: this.h, x: this.x, y: this.y})
             .textFont({ size: '24px'})
             .text("Scope: " + this.scope)
+            .textColor('#FFFFFF', 1)
             .css({"text-align": "left"});
 
     },
