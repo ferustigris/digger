@@ -21,10 +21,14 @@ Crafty.scene("top", function() {
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX - 100, y: imageY - h*count/2 +  + i*h})
             .text(topItem.name)
-            .textFont({ size: '20px', weight: 'bold' })
+            .unselectable()
+            .textColor('#FFFFFF', 1)
+            .textFont({ size: '20px', weight: 'bold' });
         Crafty.e("2D, DOM, Text")
             .attr({w: 200, h: h, x: imageX + 100, y: imageY - h*count/2 +  + i*h})
             .text(topItem.value)
             .textFont({ size: '20px', weight: 'bold' })
+            .textColor('#FFFFFF', 1)
+            .unselectable();
     }
 });
