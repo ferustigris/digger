@@ -87,6 +87,13 @@ require(AllScripts, function() {
     Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
     Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
 
+    Game.sounds.tractor = {play: function() {}}
+    Game.sounds.money = {play: function() {}}
+    Game.sounds.namnam = {play: function() {}}
+    Game.sounds.water = {play: function() {}}
+    Game.sounds.hit = {play: function() {}}
+    Game.sounds.laught = {play: function() {}}
+
     // запускаем первую сцену
     Crafty.scene("loading");
 });
