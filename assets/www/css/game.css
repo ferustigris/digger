@@ -44,6 +44,7 @@ li a {
     display: block;
     height: 80px;
     width: 160px;
+    opacity: 0.95;
     background: white;
     -moz-border-radius: 80px / 40px;
     -webkit-border-radius: 80px / 40px;
@@ -70,10 +71,44 @@ li a {
     position: absolute;
 }
 
-.digger {
+.digger-box {
     top: 50%;
-    height: 50%;
-    width: 50%;
+    left: 50%;
+    height: 25%;
+    width: 25%;
     position: absolute;
+}
+
+.digger {
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
     background: url(../images/splash/digger400x400.png) no-repeat;
+    background-size: contain;
+}
+
+.cloud1 {
+    opacity:0.9;
+    height: 50px;
+    width: 100px;
+    margin-left: -15px;
+    margin-top: -65px;
+    background: white;
+    -moz-border-radius: 50px / 25px;
+    -webkit-border-radius: 50px / 25px;
+    border-radius: 50px / 25px;
+    border: 2px black solid;
+}
+
+.cloud2 {
+    opacity:0.6;
+    height: 30px;
+    width: 60px;
+    margin-left: -35px;
+    margin-top: 25px;
+    background: white;
+    -moz-border-radius: 30px / 15px;
+    -webkit-border-radius: 30px / 15px;
+    border-radius: 30px / 15px;
+    border: 2px black solid;
 }
