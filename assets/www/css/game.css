@@ -1,8 +1,8 @@
 .fon { 
     font-family:Arial; 
     font-size:20px; 
-    background: #000000 url(../images/background.jpg) no-repeat;
-    background-size: 120%;
+    background: #000000 url(../images/main_menu_background.jpg) no-repeat;
+    background-size: 100%;
 }
 
 .table {
