@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name":"Digger",
+    "version":"0.1",
+    "description":"Remake of Digger game",
+    "app": {
+        "launch": {
+            "local_path": "menu.html"
+        }
+    },
+    "options_page": "menu.html",
+    "icons": { 
+        "16": "images/icons/icon16.png", 
+        "128": "images/icons/icon128.png"
+    },
+    "homepage_url": "https://sites.google.com/site/ferustigris/portfolio/digger"
+}

@@ -44,9 +44,9 @@ var AllScripts = [
 
 require(AllScripts, function() {
     Crafty.init(); // инизиализируем игровое поле
+    Settings.sound = Sound().sound;
 
     Game.level = new Level(Settings);
-    Settings.sound = Sound().sound;
 
     // подгружаем спрайт
     Crafty.sprite(Settings.poligon, "images/digger.png", {
@@ -80,12 +80,42 @@ require(AllScripts, function() {
         cross: [0,0]
     });
 
-    Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
-    Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
-    Game.sounds.namnam = new Media("/android_asset/www/sounds/burp.wav")
-    Game.sounds.water = new Media("/android_asset/www/sounds/water.wav")
-    Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
-    Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
+    var isPhoneGapUse = false;
+    if (isPhoneGapUse) {
+        Game.sounds.tractor = new Media("/android_asset/www/sounds/tractor.wav")
+        Game.sounds.money = new Media("/android_asset/www/sounds/money.wav")
+        Game.sounds.namnam = new Media("/android_asset/www/sounds/burp.wav")
+        Game.sounds.water = new Media("/android_asset/www/sounds/water.wav")
+        Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
+        Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
+    } else {
+    
+        Crafty.audio.add("tractor", "sounds/tractor.wav")
+        Crafty.audio.add("money", "sounds/money.wav")
+        Crafty.audio.add("burp", "sounds/burp.wav")
+        Crafty.audio.add("water", "sounds/water.wav")
+        Crafty.audio.add("hit", "sounds/hit.wav")
+        Crafty.audio.add("laught", "sounds/laught.wav")
+
+        Game.sounds.tractor = {play: function() {
+            Crafty.audio.play("tractor", 1);
+        }};
+        Game.sounds.money = {play: function() {
+            Crafty.audio.play("money", 1);
+        }};
+        Game.sounds.namnam = {play: function() {
+            Crafty.audio.play("burp", 1);
+        }};
+        Game.sounds.water = {play: function() {
+            Crafty.audio.play("water", 1);
+        }};
+        Game.sounds.hit = {play: function() {
+            Crafty.audio.play("hit", 1);
+        }};
+        Game.sounds.laught = {play: function() {
+            Crafty.audio.play("laught", 1);
+        }};
+    }
 
     // запускаем первую сцену
     Crafty.scene("loading");

@@ -2,7 +2,6 @@ Crafty.c('Unit', {
     init: function() {
         this.requires("2D");
         this.requires("Canvas");
-        this.requires("SpriteAnimation");
         this.requires("Collision"); // компонент столкновения
 
         this.attr({x: 0, y: 0, z: 1});

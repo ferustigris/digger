@@ -1,24 +1,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <link href="css/menu-red.css" rel="stylesheet" type="text/css">
-  <link href="css/game.css" rel="stylesheet" type="text/css">
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/storage.js"></script>
-  <script type="text/javascript" src="js/utils.js"></script>
-  <META content="text/html; charset=utf-8" http-equiv="Content-Type" />
-  <title>Digger</title>
-</head>
-    <body class="fon">
-	<div id='cssmenu'>
-	    <ul>
-    	    <li><a href='top.html'><span>Top</span></a></li>
-    		<li class='active'><a href='game.html'><span>Play</span></a></li>
-            <li><a href='#' onClick='Sound().soundSwitch()'><span class='soundLabel'>Sound</span></a></li>
-            <!-- <li><a href='#' onClick='exit()'><span>Quit</span></a></li>-->
-        	<li class='last'><a href='about.html'><span>About</span></a></li>
+    <head>
+        <link href="css/menu-red.css" rel="stylesheet" type="text/css">
+        <link href="css/game.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/storage.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <META content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <title>Digger</title>
+    </head>
+    <body class="fon" onLoad="Sound().soundSwitch().soundSwitch();">
+            <div class="digger-box">
+                <div class="cloud2"></div>
+                <div class="cloud1"></div>
+                <div class="digger"></div>
+            </div>
+            <ul class="LeftColumn">
+                <li class="MenuItem">
+                    <a href='top.html'>Top</a>
+                </li>
+                <li class="MenuItem">
+                    <a href='#' onClick='Sound().soundSwitch()' class="soundLabel">Sound</a>
+                </li>
+                <li class="MenuItem">
+                    <a href='about.html'>About</a>
+                </li>
             </ul>
-        </div>
+            <ul class="RightColumn">
+                <li class="MenuItem">
+                </li>
+                <li class="MenuItem">
+                    <a href='game.html'>Go down</a>
+                </li>
+                <li class="MenuItem">
+                </li>
+            </ul>
     </body>
 </html>
