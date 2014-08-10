@@ -10,3 +10,5 @@ You can try develop version on https://c9.io/ferus_tigris/digger/workspace/asset
 or see more on https://sites.google.com/site/ferustigris/portfolio/digger
 
 Google chrome: https://chrome.google.com/webstore/detail/digger/jkfnmfmpbpnomkngfakiieckopoklhoo
+
+Google play: https://play.google.com/store/apps/details?id=ferus.tigris.digger
