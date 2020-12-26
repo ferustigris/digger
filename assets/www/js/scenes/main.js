@@ -20,7 +20,7 @@ Crafty.scene("main", function() {
                 h: Settings.poligon// - 20
             } 
         } while (ocupied.search(joinCoord(x, y)) >= 0)
-        ocupied += joinCoord(pos.x, pos.y);
+        ocupied += joinCoord(x, y);
         return pos
     }
 

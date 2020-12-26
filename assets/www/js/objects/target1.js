@@ -24,17 +24,16 @@ Crafty.c('Target1', {
             var object = e[0].obj;
             object.clear();
 
-
             Settings.scope += 50;
-            Game.scopeView.update(Settings.scope);
-            console.log("Target1&Cargo1 scope=" + Settings.scope);
-            
-            if (Settings.sound)
-                Game.sounds.money.play();
+            Crafty.e("Target1Completed").attr({x: this.x, y: this.y});
+            this.clean();
 
-                setTimeout(function() {
-                    Crafty.scene("win");
-                }, 500);
+            Game.win();
         });
+    },
+
+    clean: function() {
+        this.removeComponent('Target1');
+        this.destroy();
     }
 });

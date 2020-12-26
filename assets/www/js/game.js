@@ -54,10 +54,12 @@ var AllScripts = [
     'js/objects/monster_sprite',
     'js/objects/scope',
     'js/objects/target1',
+    'js/objects/target1completed',
     'js/objects/resetbutton',
     'js/objects/soundbuttonoff',
     'js/objects/soundbuttonon',
     'js/objects/bonus',
+
     // scenes
     'js/scenes/loading',
     'js/scenes/main',
@@ -89,6 +91,9 @@ require(AllScripts, function() {
     });
     Crafty.sprite(Settings.poligon, "images/target1.png", {
         target1: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/target1_completed.png", {
+        target1completed: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/soundon.png", {
         soundon: [0,0]
