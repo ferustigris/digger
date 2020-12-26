@@ -12,14 +12,36 @@ var Settings = {
 var Game = {
     scopeView: {},
     level: {},
-    sounds: {}
+    sounds: {},
+    win: function() {
+        Game.scopeView.update(Settings.scope);
+        console.log("Target1&Player scope=" + Settings.scope);
+        
+        if (Settings.sound)
+            Game.sounds.money.play();
+
+        setTimeout(function() {
+            Crafty.scene("win");
+        }, 1500);
+    },
+    lose: function() {
+        Game.scopeView.update(Settings.scope);
+        console.log("Target1&Player scope=" + Settings.scope);
+        
+        if (Settings.sound)
+            Game.sounds.money.namnam();
+
+        setTimeout(function() {
+            Crafty.scene("lose");
+        }, 1500);
+    },
 };
 
 var AllScripts = [
     // objects
     'js/objects/flower',
     'js/objects/stone',
-    'js/objects/cargo',
+    'js/objects/cargo1',
     'js/objects/ground',
     'js/objects/sand',
     'js/objects/cross',
@@ -31,7 +53,7 @@ var AllScripts = [
     'js/objects/monster',
     'js/objects/monster_sprite',
     'js/objects/scope',
-    'js/objects/target',
+    'js/objects/target1',
     'js/objects/resetbutton',
     'js/objects/soundbuttonoff',
     'js/objects/soundbuttonon',
@@ -42,6 +64,10 @@ var AllScripts = [
     'js/scenes/win',
     'js/scenes/lose',
     //utils
+    'js/levels/deliver2target',
+    'js/levels/deliver2target2',
+    'js/levels/go2target',
+    'js/levels/cleanall',
     'js/storage.js',
     'js/utils.js',
     'js/phonegap-1.4.1.js'
@@ -61,8 +87,8 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/monster.png", {
         monster: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/target.png", {
-        target: [0,0]
+    Crafty.sprite(Settings.poligon, "images/target1.png", {
+        target1: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/soundon.png", {
         soundon: [0,0]
@@ -81,7 +107,7 @@ require(AllScripts, function() {
         sand: [0,0]
     });
     // подгружаем спрайт
-    Crafty.sprite(Settings.poligon, "images/cargo1.jpg", {
+    Crafty.sprite(Settings.poligon, "images/cargo1.png", {
         cargo1: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/house.png", {

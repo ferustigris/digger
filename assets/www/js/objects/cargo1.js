@@ -1,4 +1,4 @@
-Crafty.c('Cargo', {
+Crafty.c('Cargo1', {
     init: function() {
         this.requires("2D");
         this.requires("Canvas");

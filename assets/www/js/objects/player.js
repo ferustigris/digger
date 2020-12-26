@@ -4,6 +4,7 @@ Crafty.c('Player', {
         this.requires("Fourway"); // подключаем компонент движения
         this.requires("FourwayTouch"); // подключаем компонент движения
         this.requires("PlayerSprite");
+        this.requires("Collision");
 
         this.fourway(Settings.speed);
         
@@ -28,44 +29,44 @@ Crafty.c('Player', {
         };
 
 
-        this.onHit("bag", function(e) {
-            var object = e[0].obj;
-            object.clear();
+        // this.onHit("bag", function(e) {
+        //     var object = e[0].obj;
+        //     object.clear();
 
-            Settings.scope += 50;
-            Game.scopeView.update(Settings.scope);
-            console.log("scope=" + Settings.scope);
+        //     Settings.scope += 50;
+        //     Game.scopeView.update(Settings.scope);
+        //     console.log("scope=" + Settings.scope);
             
-            if (Settings.sound)
-                Game.sounds.money.play();
+        //     if (Settings.sound)
+        //         Game.sounds.money.play();
 
-            if ((Settings.flower_count -= 1) == 0) {
-                setTimeout(function() {
-                    Crafty.scene("win");
-                }, 500);
-            }
-        });
+        //     if ((Settings.flower_count -= 1) == 0) {
+        //         setTimeout(function() {
+        //             Crafty.scene("win");
+        //         }, 500);
+        //     }
+        // });
 
-        this.onHit("bonus", function(e) {
-            var object = e[0].obj;
-            object.clear();
+        // this.onHit("bonus", function(e) {
+        //     var object = e[0].obj;
+        //     object.clear();
 
-            Settings.scope *= 2;
-            Game.scopeView.update(Settings.scope);
-            console.log("scope=" + Settings.scope);
-            if (Settings.sound)
-                Game.sounds.money.play();
-        });
+        //     Settings.scope *= 2;
+        //     Game.scopeView.update(Settings.scope);
+        //     console.log("scope=" + Settings.scope);
+        //     if (Settings.sound)
+        //         Game.sounds.money.play();
+        // });
 
-        this.onHit("hard_monster", function(e) {
-            console.log("hit with Monster!");
-            if (Settings.sound)
-                Game.sounds.namnam.play();
-            player.clear();
-            setTimeout(function() {
-                Crafty.scene("lose");
-            }, 500);
-        });
+        // this.onHit("hard_monster", function(e) {
+        //     console.log("hit with Monster!");
+        //     if (Settings.sound)
+        //         Game.sounds.namnam.play();
+        //     player.clear();
+        //     setTimeout(function() {
+        //         Crafty.scene("lose");
+        //     }, 500);
+        // });
 
         this.onHit("hard_ground", function(e) {
             console.log("hit with ground");
