@@ -29,7 +29,7 @@ var Game = {
         console.log("Target1&Player scope=" + Settings.scope);
         
         if (Settings.sound)
-            Game.sounds.money.namnam();
+            Game.sounds.namnam.play();
 
         setTimeout(function() {
             Crafty.scene("lose");
@@ -59,6 +59,12 @@ var AllScripts = [
     'js/objects/soundbuttonoff',
     'js/objects/soundbuttonon',
     'js/objects/bonus',
+    'js/objects/track',
+    'js/objects/trackfull',
+    'js/objects/tracktarget',
+    'js/objects/trackfulltarget',
+    'js/objects/tracktargetcompleted',
+    'js/objects/trackfulltargetcompleted',
 
     // scenes
     'js/scenes/loading',
@@ -91,6 +97,9 @@ require(AllScripts, function() {
     });
     Crafty.sprite(Settings.poligon, "images/target1.png", {
         target1: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/tracktarget_completed.png", {
+        tracktargetcompleted: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/target1_completed.png", {
         target1completed: [0,0]
@@ -127,6 +136,18 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/cross.png", {
         cross: [0,0]
     });
+    Crafty.sprite(Settings.poligon, "images/track.png", {
+        track: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/trackfull.png", {
+        trackfull: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/tracktarget.png", {
+        tracktarget: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/trackfulltarget_completed.png", {
+        trackfulltargetcompleted: [0,0]
+    });
 
     var isPhoneGapUse = false;
     if (isPhoneGapUse) {
@@ -136,6 +157,10 @@ require(AllScripts, function() {
         Game.sounds.water = new Media("/android_asset/www/sounds/water.wav")
         Game.sounds.hit = new Media("/android_asset/www/sounds/hit.wav")
         Game.sounds.laught = new Media("/android_asset/www/sounds/laught.wav")
+        Game.sounds.deliver2target = new Media("/android_asset/www/sounds/deliver2target.wav")
+        Game.sounds.deliver2target2 = new Media("/android_asset/www/sounds/deliver2target2.wav")
+        Game.sounds.track_go2target = new Media("/android_asset/www/sounds/track_go2target.wav")
+        Game.sounds.trackfull_go2target = new Media("/android_asset/www/sounds/trackfull_go2target.wav")
     } else {
     
         Crafty.audio.add("tractor", "sounds/tractor.wav")
@@ -144,6 +169,10 @@ require(AllScripts, function() {
         Crafty.audio.add("water", "sounds/water.wav")
         Crafty.audio.add("hit", "sounds/hit.wav")
         Crafty.audio.add("laught", "sounds/laught.wav")
+        Crafty.audio.add("deliver2target", "sounds/deliver2target.wav")
+        Crafty.audio.add("deliver2target2", "sounds/deliver2target2.wav")
+        Crafty.audio.add("track_go2target", "sounds/track_go2target.wav")
+        Crafty.audio.add("trackfull_go2target", "sounds/trackfull_go2target.wav")
 
         Game.sounds.tractor = {play: function() {
             Crafty.audio.play("tractor", 1);
@@ -162,6 +191,18 @@ require(AllScripts, function() {
         }};
         Game.sounds.laught = {play: function() {
             Crafty.audio.play("laught", 1);
+        }};
+        Game.sounds.deliver2target2 = {play: function() {
+            Crafty.audio.play("deliver2target2", 1);
+        }};
+        Game.sounds.deliver2target = {play: function() {
+            Crafty.audio.play("deliver2target", 1);
+        }};
+        Game.sounds.track_go2target = {play: function() {
+            Crafty.audio.play("track_go2target", 1);
+        }};
+        Game.sounds.trackfull_go2target = {play: function() {
+            Crafty.audio.play("trackfull_go2target", 1);
         }};
     }
 

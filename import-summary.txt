@@ -1,0 +1,175 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .idea\
+* .idea\workspace.xml
+* README.md
+* app\
+* app\build.gradle
+* app\libs\
+* app\libs\phonegap-1.4.1.jar
+* app\src\
+* app\src\main\
+* app\src\main\AndroidManifest.xml
+* app\src\main\assets\
+* app\src\main\assets\www\
+* app\src\main\assets\www\README
+* app\src\main\assets\www\about.html
+* app\src\main\assets\www\apis\
+* app\src\main\assets\www\apis\accelerometer.js
+* app\src\main\assets\www\apis\camera.js
+* app\src\main\assets\www\apis\capture.js
+* app\src\main\assets\www\apis\compass.js
+* app\src\main\assets\www\apis\connection.js
+* app\src\main\assets\www\apis\contacts.js
+* app\src\main\assets\www\apis\device.js
+* app\src\main\assets\www\apis\events.js
+* app\src\main\assets\www\apis\file.js
+* app\src\main\assets\www\apis\geolocation.js
+* app\src\main\assets\www\apis\media.js
+* app\src\main\assets\www\apis\notification.js
+* app\src\main\assets\www\apis\storage.js
+* app\src\main\assets\www\css\
+* app\src\main\assets\www\css\game.css
+* app\src\main\assets\www\css\images\
+* app\src\main\assets\www\css\images\menu4.gif
+* app\src\main\assets\www\css\menu-orange.css
+* app\src\main\assets\www\css\menu-red.css
+* app\src\main\assets\www\css\menu.css
+* app\src\main\assets\www\game.html
+* app\src\main\assets\www\images\
+* app\src\main\assets\www\images\bag.png
+* app\src\main\assets\www\images\cargo1.jpg
+* app\src\main\assets\www\images\cross.png
+* app\src\main\assets\www\images\digger.png
+* app\src\main\assets\www\images\granit1.jpg
+* app\src\main\assets\www\images\granit2.jpg
+* app\src\main\assets\www\images\ground.png
+* app\src\main\assets\www\images\icons\
+* app\src\main\assets\www\images\icons\icon128.png
+* app\src\main\assets\www\images\icons\icon16.png
+* app\src\main\assets\www\images\main_menu_background.jpg
+* app\src\main\assets\www\images\monster.png
+* app\src\main\assets\www\images\rename.png
+* app\src\main\assets\www\images\repa.png
+* app\src\main\assets\www\images\restart.png
+* app\src\main\assets\www\images\sand.jpg
+* app\src\main\assets\www\images\shutdown.png
+* app\src\main\assets\www\images\soundoff.png
+* app\src\main\assets\www\images\soundon.png
+* app\src\main\assets\www\images\splash\
+* app\src\main\assets\www\images\splash\digger200x200.png
+* app\src\main\assets\www\images\splash\digger400x400.png
+* app\src\main\assets\www\images\splash\digger800x800.png
+* app\src\main\assets\www\js\
+* app\src\main\assets\www\js\crafty.js
+* app\src\main\assets\www\js\game.js
+* app\src\main\assets\www\js\jquery.js
+* app\src\main\assets\www\js\objects\
+* app\src\main\assets\www\js\objects\bonus.js
+* app\src\main\assets\www\js\objects\cargo.js
+* app\src\main\assets\www\js\objects\cross.js
+* app\src\main\assets\www\js\objects\donatebutton.js
+* app\src\main\assets\www\js\objects\flower.js
+* app\src\main\assets\www\js\objects\fourway_ai.js
+* app\src\main\assets\www\js\objects\fourway_touch.js
+* app\src\main\assets\www\js\objects\ground.js
+* app\src\main\assets\www\js\objects\monster.js
+* app\src\main\assets\www\js\objects\monster_sprite.js
+* app\src\main\assets\www\js\objects\player.js
+* app\src\main\assets\www\js\objects\player_sprite.js
+* app\src\main\assets\www\js\objects\resetbutton.js
+* app\src\main\assets\www\js\objects\sand.js
+* app\src\main\assets\www\js\objects\scope.js
+* app\src\main\assets\www\js\objects\soundbuttonoff.js
+* app\src\main\assets\www\js\objects\soundbuttonon.js
+* app\src\main\assets\www\js\objects\stone.js
+* app\src\main\assets\www\js\objects\unit.js
+* app\src\main\assets\www\js\phonegap-1.4.1.js
+* app\src\main\assets\www\js\require.js
+* app\src\main\assets\www\js\scenes\
+* app\src\main\assets\www\js\scenes\loading.js
+* app\src\main\assets\www\js\scenes\lose.js
+* app\src\main\assets\www\js\scenes\main.js
+* app\src\main\assets\www\js\scenes\top.js
+* app\src\main\assets\www\js\scenes\win.js
+* app\src\main\assets\www\js\storage.js
+* app\src\main\assets\www\js\top.js
+* app\src\main\assets\www\js\utils.js
+* app\src\main\assets\www\manifest.json
+* app\src\main\assets\www\menu.html
+* app\src\main\assets\www\phonegap-1.4.1.js
+* app\src\main\assets\www\sounds\
+* app\src\main\assets\www\sounds\burp.wav
+* app\src\main\assets\www\sounds\chick.wav
+* app\src\main\assets\www\sounds\hit.wav
+* app\src\main\assets\www\sounds\laught.wav
+* app\src\main\assets\www\sounds\money.wav
+* app\src\main\assets\www\sounds\tractor.ogg
+* app\src\main\assets\www\sounds\tractor.wav
+* app\src\main\assets\www\sounds\water.wav
+* app\src\main\assets\www\top.html
+* app\src\main\java\
+* app\src\main\java\ferus\
+* app\src\main\java\ferus\tigris\
+* app\src\main\java\ferus\tigris\digger\
+* app\src\main\java\ferus\tigris\digger\Digger.java
+* app\src\main\java\ferus\tigris\digger\MyPhoneGapActivity.java
+* app\src\main\res\
+* app\src\main\res\drawable-hdpi\
+* app\src\main\res\drawable-hdpi\ic_launcher.png
+* app\src\main\res\drawable-ldpi\
+* app\src\main\res\drawable-ldpi\ic_launcher.png
+* app\src\main\res\drawable-mdpi\
+* app\src\main\res\drawable-mdpi\ic_launcher.png
+* app\src\main\res\drawable-xhdpi\
+* app\src\main\res\drawable-xhdpi\ic_launcher.png
+* app\src\main\res\layout\
+* app\src\main\res\layout\main.xml
+* app\src\main\res\values\
+* app\src\main\res\values\strings.xml
+* app\src\main\res\xml\
+* app\src\main\res\xml\phonegap.xml
+* app\src\main\res\xml\plugins.xml
+* build.gradle
+* gradle\
+* gradle\wrapper\
+* gradle\wrapper\gradle-wrapper.jar
+* gradle\wrapper\gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* privacy_policy.md
+* proguard-project.txt
+* settings.gradle
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets\
+* libs\phonegap-1.4.1.jar => app\libs\phonegap-1.4.1.jar
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

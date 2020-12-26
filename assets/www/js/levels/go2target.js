@@ -4,22 +4,17 @@ Crafty.c('Go2Target', {
     },
     addPersonages: function(mainScene,) {
 
-        Crafty.e("Player").attr(mainScene.get_position(0, 0));
-        // Crafty.e("Target").attr(mainScene.get_random_position());
-        Crafty.e("Target").attr(mainScene.get_position(3, 3));
+        Crafty.e("Track").attr(mainScene.get_position(0, 0));
+        Crafty.e("TrackTarget").attr(mainScene.get_random_position());
+        Crafty.e("TrackFullTarget").attr(mainScene.get_random_position());
 
-        for(var i = 0; i < mainScene.cellsCount/5; i++) {
+        for(var i = 0; i < mainScene.cellsCount/10; i++) {
             Crafty.e("Ground").attr(mainScene.get_random_position())
         }
-        for(var i = 0; i < mainScene.cellsCount/10; i++) {
+        for(var i = 0; i < mainScene.cellsCount/20; i++) {
             Crafty.e("Stone").attr(mainScene.get_random_position())
         }
-
-        if (Settings.level == 1) {
-            Crafty.e("Cargo").attr(mainScene.get_position(1, 1));
-        } else {
-            Crafty.e("Cargo").attr(mainScene.get_random_position());
-        } 
+        Game.sounds.track_go2target.play()
     },
     clean: function () {
         this.removeComponent('Go2Target');

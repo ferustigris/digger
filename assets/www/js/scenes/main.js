@@ -48,7 +48,7 @@ Crafty.scene("main", function() {
     }
     this.cellsCount = Settings.width / Settings.poligon * Settings.height / Settings.poligon
     
-    level = levels[0]
+    level = levels[Settings.level % 3]
     console.log(Settings.level % 3)
     console.log(level)
     level.addPersonages(this)
