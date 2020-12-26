@@ -3,7 +3,7 @@ var Settings = {
     height: 600, // высота
     poligon: 100, // размер полигона 16x16
     scope: 0,
-    level: 0, // текущий уровень
+    level: 1, // текущий уровень
     speed: 1, // current monster speed
     flower_count: 0, // цветоков на уровне
     sound: true
@@ -31,6 +31,7 @@ var AllScripts = [
     'js/objects/monster',
     'js/objects/monster_sprite',
     'js/objects/scope',
+    'js/objects/target',
     'js/objects/resetbutton',
     'js/objects/soundbuttonoff',
     'js/objects/soundbuttonon',
@@ -60,7 +61,9 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/monster.png", {
         monster: [0,0]
     });
-    // подгружаем спрайт
+    Crafty.sprite(Settings.poligon, "images/target.png", {
+        target: [0,0]
+    });
     Crafty.sprite(Settings.poligon, "images/soundon.png", {
         soundon: [0,0]
     });

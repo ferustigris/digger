@@ -2,13 +2,11 @@ Crafty.c('Cargo', {
     init: function() {
         this.requires("2D");
         this.requires("Canvas");
-        // this.requires("Gravity");
         this.requires("cargo1");
         this.requires("hard_object");
         this.requires("hard_stone");
         this.requires("Tween");
 
-        // this.gravity("hard_object");
         this.attr({x: 0, y: 0, z: 2, w: Settings.poligon, h: Settings.poligon});
 
     },
@@ -21,5 +19,10 @@ Crafty.c('Cargo', {
         });
 
         return !isCollision
+    },
+
+    clear: function() {
+        this.removeComponent('Player');
+        this.destroy();
     }
 });

@@ -5,8 +5,6 @@ Crafty.c('Player', {
         this.requires("FourwayTouch"); // подключаем компонент движения
         this.requires("PlayerSprite");
 
-        this.attr({x: 0, y: 0, w: 100, h: 100});
-
         this.fourway(Settings.speed);
         
         var player = this;
