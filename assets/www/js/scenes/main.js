@@ -14,8 +14,12 @@ Crafty.scene("main", function() {
     for(var i = 0; i*Settings.poligon < Settings.width; i++) {
         console.log("Main scene ground")
         for(var j = 0; j*Settings.poligon < Settings.height; j++) {
-	    console.log("Main scene ground")
             Crafty.e("Sand").attr({x: i * Settings.poligon, y: j * Settings.poligon});
+        }
+    }
+    for(var i = 0; (i+1)*Settings.poligon < Settings.width; i++) {
+        console.log("Main scene ground")
+        for(var j = 0; (j+1)*Settings.poligon < Settings.height; j++) {
             if ((i + j > 0) && (Crafty.math.randomInt(0, 6) < 4)) {
                         Crafty.e("Ground").attr({
                             x: i * Settings.poligon,
@@ -32,13 +36,28 @@ Crafty.scene("main", function() {
                     y: j * Settings.poligon,// + 20,
                     w: Settings.poligon,// - 20,
                     h: Settings.poligon// - 20
-                    });
+                    }).update();
                 stonesCoords += joinCoord(i, j);
             }
-
         }
     }
     
+    if (Settings.level == 1) {
+        Crafty.e("Cargo").attr({
+            x: 1 * Settings.poligon,// + 10,
+            y: 0 * Settings.poligon,// + 10,
+            w: Settings.poligon,// - 20,
+            h: Settings.poligon// - 20
+            });
+    } else {
+        Crafty.e("Cargo").attr({
+            x: Crafty.math.randomInt(0, Settings.width / Settings.poligon - 1) * Settings.poligon,// + 10,
+            y: Crafty.math.randomInt(0, Settings.height / Settings.poligon - 1) * Settings.poligon,// + 10,
+            w: Settings.poligon,// - 20,
+            h: Settings.poligon// - 20
+            });
+    } 
+
     if (Settings.level % 2) {
         var x = 0;
         var y = 0;
@@ -58,10 +77,9 @@ Crafty.scene("main", function() {
 
     while (flower_count > 0) {
         //generate the grass along the x-axis
-        for(var i = 1; i*Settings.poligon < Settings.width; i++) {
-            //generate the grass along the y-axis
-	    console.log("Main scene flowers")
-            for(var j = 1; j*Settings.poligon < Settings.height; j++) {
+        for(var i = 0; (i+1)*Settings.poligon < Settings.width; i++) {
+            console.log("Main scene ground")
+            for(var j = 0; (j+1)*Settings.poligon < Settings.height; j++) {
                 if (stonesCoords.search(joinCoord(i, j)) >= 0)
                     continue;
                 if ((flower_count > 0) && (!Crafty.math.randomInt(0, 5))) {
@@ -84,6 +102,22 @@ Crafty.scene("main", function() {
             }
         }
     }
+
+    Crafty.e(Settings.sound ? "SoundButtonOff" : "SoundButtonOn").attr({
+        x: Settings.width - 2 * Settings.poligon,
+        y: Settings.height - 2 * Settings.poligon,
+        w: Settings.poligon,
+        h: Settings.poligon,
+        z: 1
+    });
+
+    Crafty.e("ResetButton").attr({
+        x: Settings.width - 3 * Settings.poligon,
+        y: Settings.height - 2 * Settings.poligon,
+        w: Settings.poligon,
+        h: Settings.poligon,
+        z: 1
+    });
 
     Crafty.e("Player").attr({x: 0, y: 0, z: 1, w: Settings.poligon, h: Settings.poligon});
 

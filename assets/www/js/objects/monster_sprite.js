@@ -3,10 +3,10 @@ Crafty.c('MonsterSprite', {
         this.requires("monster");
         this.requires("SpriteAnimation");
 
-        this.animate("walk_left", 0, 2, 1);
-        this.animate("walk_right", 0, 1, 1);
-        this.animate("walk_up", 0, 0, 1);
-        this.animate("walk_down", 0, 3, 1);
+        this.animate("walk_left", 0, 1, 3);
+        this.animate("walk_right", 0, 2, 3);
+        this.animate("walk_up", 0, 3, 3);
+        this.animate("walk_down", 0, 0, 3);
         
         var self = this;
         this.bind("Moved", function(e) {

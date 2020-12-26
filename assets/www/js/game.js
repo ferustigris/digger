@@ -1,9 +1,9 @@
 var Settings = {
     width: 800, // ширина игрового поля
     height: 600, // высота
-    poligon: 80, // размер полигона 16x16
+    poligon: 100, // размер полигона 16x16
     scope: 0,
-    level: 2, // текущий уровень
+    level: 0, // текущий уровень
     speed: 1, // current monster speed
     flower_count: 0, // цветоков на уровне
     sound: true
@@ -19,6 +19,7 @@ var AllScripts = [
     // objects
     'js/objects/flower',
     'js/objects/stone',
+    'js/objects/cargo',
     'js/objects/ground',
     'js/objects/sand',
     'js/objects/cross',
@@ -30,6 +31,9 @@ var AllScripts = [
     'js/objects/monster',
     'js/objects/monster_sprite',
     'js/objects/scope',
+    'js/objects/resetbutton',
+    'js/objects/soundbuttonoff',
+    'js/objects/soundbuttonon',
     'js/objects/bonus',
     // scenes
     'js/scenes/loading',
@@ -57,18 +61,28 @@ require(AllScripts, function() {
         monster: [0,0]
     });
     // подгружаем спрайт
-    Crafty.sprite(Settings.poligon, "images/ground.jpg", {
+    Crafty.sprite(Settings.poligon, "images/soundon.png", {
+        soundon: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/soundoff.png", {
+        soundoff: [0,0]
+    });
+    Crafty.sprite(Settings.poligon, "images/restart.png", {
+        restart: [0,0]
+    });
+    // подгружаем спрайт
+    Crafty.sprite(Settings.poligon, "images/ground.png", {
         ground: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/sand.jpg", {
         sand: [0,0]
     });
     // подгружаем спрайт
-    Crafty.sprite(Settings.poligon, "images/granit1.jpg", {
-        granit1: [0,0]
+    Crafty.sprite(Settings.poligon, "images/cargo1.jpg", {
+        cargo1: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/granit2.jpg", {
-        granit2: [0,0]
+    Crafty.sprite(Settings.poligon, "images/house.png", {
+        house: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/bag.png", {
         bag: [0,0]
