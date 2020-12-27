@@ -24,14 +24,13 @@ Crafty.scene("loading", function() {
     var imageY = Crafty.DOM.window.height/2 - imgHeight/2;
     var imgName = "images/splash/digger" + splashSizes[splashSizeIndex] + "x" + splashSizes[splashSizeIndex] + ".png";
 
-    Crafty.e("2D, DOM, Text, Image").attr({
+    Crafty.e("2D, DOM, Text, Image, Mouse").attr({
         w: imgWidth,
         h: imgHeight,
         x: imageX,
         y: imageY
-    }).image(imgName);
-
-    setTimeout(function() {
+    }).image(imgName).bind("Click", function () {
         Crafty.scene("main");
-    }, 1500);
+    });
+
 });

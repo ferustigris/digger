@@ -7,7 +7,7 @@ Crafty.c('Ground', {
         this.requires("hard_object");
         this.requires("SpriteAnimation");
 
-        num = Crafty.math.randomInt(0, 7)
+        num = Crafty.math.randomInt(0, 6)
         console.log('Crafty random: ' +  num)
         this.animate("first", num, 0, num);
         this.attr({x: 0, y: 0, z: 2, w: Settings.poligon, h: Settings.poligon});

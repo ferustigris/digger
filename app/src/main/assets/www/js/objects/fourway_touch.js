@@ -27,8 +27,7 @@ Crafty.c('FourwayTouch', {
                     object.trigger('Moved', {x: dx, y: dy})
                     object.tween({x: dx, y: dy}, 30)
                     object.inMotion = true
-                    if (Settings.sound)
-                        Game.sounds.tractor.play();
+                    Game.sounds.tractor.play();
                 }
             })
         this.bind("TweenEnd", function() {

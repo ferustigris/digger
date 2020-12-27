@@ -4,7 +4,7 @@ var Settings = {
     poligon: 100, // размер полигона 16x16
     scope: 0,
     level: 1, // текущий уровень
-    speed: 1, // current monster speed
+    speed: 10, // current monster speed
     flower_count: 0, // цветоков на уровне
     sound: true
 };
@@ -64,6 +64,14 @@ var AllScripts = [
     'js/objects/trackfulltarget',
     'js/objects/tracktargetcompleted',
     'js/objects/trackfulltargetcompleted',
+    'js/objects/concrete_track',
+    'js/objects/concrete_track_full',
+    'js/objects/concrete_track_target',
+    'js/objects/concrete_track_target_empty',
+    'js/objects/concrete_track_full_target',
+    'js/objects/concrete_track_full_target_completed',
+    'js/objects/tracktargetcompleted',
+    'js/objects/trackfulltargetcompleted',
 
     // scenes
     'js/scenes/loading',
@@ -74,6 +82,7 @@ var AllScripts = [
     'js/levels/deliver2target',
     'js/levels/deliver2target2',
     'js/levels/go2target',
+    'js/levels/go2target_concrete',
     'js/levels/cleanall',
     'js/storage.js',
     'js/utils.js',
@@ -85,7 +94,6 @@ require(AllScripts, function() {
     Settings.sound = Sound().sound;
 
     Game.level = new Level(Settings);
-
 
     sprites = {
         digger: "images/digger.png",
@@ -99,7 +107,7 @@ require(AllScripts, function() {
 
         target1: "images/target1.png",
         cargo1: "images/cargo1.png",
-        target1completed: "images/target1_completed.png",
+        target1completed: "images/construction1.png",
 
         monster: "images/monster.png",
 
@@ -107,7 +115,13 @@ require(AllScripts, function() {
         tracktarget: "images/trackTarget.png",
         tracktargetcompleted: "images/tracktarget_completed.png",
         trackfull: "images/trackfull.png",
-        trackfulltargetcompleted: "images/trackfulltarget_completed.png",
+        trackfulltargetcompleted: "images/construction2.png",
+
+        concrete_track: "images/concrete_track.png",
+        concrete_track_target: "images/concrete_target_full.png",
+        concrete_track_target_empty: "images/concrete_target_empty.png",
+        concrete_track_full: "images/concrete_trackfull.png",
+        concrete_track_full_target_completed: "images/construction3.png",
     }
 
     for (var key in sprites) {
@@ -128,6 +142,7 @@ require(AllScripts, function() {
         deliver2target: "sounds/deliver2target.wav",
         deliver2target2: "sounds/deliver2target2.wav",
         track_go2target: "sounds/track_go2target.wav",
+        concrete: "sounds/concrete.wav",
         trackfull_go2target: "sounds/trackfull_go2target.wav",
     }
 

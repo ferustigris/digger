@@ -59,12 +59,12 @@ Crafty.scene("main", function() {
         0: Crafty.e("Deliver2Target"),
         1: Crafty.e("Deliver2Target2"),
         2: Crafty.e("Go2Target"),
-        3: Crafty.e("CleanAll")
+        3: Crafty.e("Go2TargetConcrete")
     }
     this.cellsCount = Settings.width / Settings.poligon * Settings.height / Settings.poligon
     
-    level = levels[Settings.level % 3]
-    console.log(Settings.level % 3)
+    level = levels[Settings.level % 4]
+    console.log(Settings.level % 4)
     console.log(level)
     level.addPersonages(this)
 

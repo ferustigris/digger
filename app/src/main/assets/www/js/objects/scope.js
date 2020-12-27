@@ -8,7 +8,7 @@ Crafty.c('Scope', {
         this.text = Crafty.e("2D, DOM, Text")
             .attr({w: this.w, h: this.h, x: this.x, y: this.y})
             .textFont({ size: '24px'})
-            .text("Scope: " + this.scope)
+            .text("x" + this.scope)
             .textColor('#FFFFFF', 1)
             .css({"text-align": "left"});
 
@@ -25,7 +25,7 @@ Crafty.c('Scope', {
     },
 
     getString: function() {
-        return "Scope: " + Math.round(this.scope);
+        return "x" + Math.round(this.scope);
     }
 
 });

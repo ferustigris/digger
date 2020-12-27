@@ -35,7 +35,7 @@ Crafty.scene("win", function() {
 
     setTimeout(function() {
           Crafty.scene("main");
-    }, 1500);
+    }, 2500);
 
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, h: 50, z: 1, scope: Settings.scope});
 });

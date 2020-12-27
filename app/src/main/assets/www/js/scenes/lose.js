@@ -18,7 +18,7 @@ Crafty.scene("lose", function() {
 
     Crafty.e("2D, DOM, Text")
         .attr({w: Settings.width, h: 200, x: imageX - Settings.width/2, y: imageY - 100})
-        .text(isGameOver ? "Game over" : "You loose")
+        .text(isGameOver ? "Начнем сначала?" : "Давай попробуем еще раз?")
         .textFont({ size: '48px'})
         .css({
             "text-align": "center",
@@ -29,5 +29,5 @@ Crafty.scene("lose", function() {
 
     setTimeout(function() {
         Crafty.scene("main");
-    }, 1000);
+    }, 2500);
 });
