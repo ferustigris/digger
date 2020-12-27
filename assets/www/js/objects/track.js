@@ -11,7 +11,6 @@ Crafty.c('Track', {
 
         track = this;
         this.bind('Move', function(evt) {
-            track.level.firstSound()
             Crafty("TrackTarget").each(function(i) {
                 if (this.isAt(track.x, track.y)) {
                     console.log('Hits with TrackTarget ')

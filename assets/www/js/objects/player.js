@@ -28,36 +28,6 @@ Crafty.c('Player', {
             return !isCollision && !player.isUnitOutOfRange(x, y);
         };
 
-
-        // this.onHit("bag", function(e) {
-        //     var object = e[0].obj;
-        //     object.clear();
-
-        //     Settings.scope += 50;
-        //     Game.scopeView.update(Settings.scope);
-        //     console.log("scope=" + Settings.scope);
-            
-        //     if (Settings.sound)
-        //         Game.sounds.money.play();
-
-        //     if ((Settings.flower_count -= 1) == 0) {
-        //         setTimeout(function() {
-        //             Crafty.scene("win");
-        //         }, 500);
-        //     }
-        // });
-
-        // this.onHit("bonus", function(e) {
-        //     var object = e[0].obj;
-        //     object.clear();
-
-        //     Settings.scope *= 2;
-        //     Game.scopeView.update(Settings.scope);
-        //     console.log("scope=" + Settings.scope);
-        //     if (Settings.sound)
-        //         Game.sounds.money.play();
-        // });
-
         // this.onHit("hard_monster", function(e) {
         //     console.log("hit with Monster!");
         //     if (Settings.sound)
@@ -80,9 +50,6 @@ Crafty.c('Player', {
                 Crafty.scene("lose");
             }, 1500);
         });
-        this.bind('Move', function(evt) {
-            player.level.firstSound()
-        })
 
     },
 

@@ -12,13 +12,10 @@ Crafty.c('Deliver2Target', {
             Crafty.e("Ground").attr(mainScene.get_random_position())
             Crafty.e("Stone").attr(mainScene.get_random_position())
         }
+        Game.sounds.deliver2target.play()
     },
     clean: function () {
         this.removeComponent('Deliver2Target');
         this.destroy();
-    },
-    firstSound: function() {
-        Game.sounds.deliver2target.play()
-        this.firstSound = function() {}
     }
 });

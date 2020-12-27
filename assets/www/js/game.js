@@ -133,16 +133,20 @@ require(AllScripts, function() {
 
     var isPhoneGapUse = false;
     for (var key in sounds) {
-        console.log("Load sound", key, sprites[key]);
+        console.log("Load sound", key, sounds[key]);
         if (isPhoneGapUse) {
             Game.sounds[key] = new Media("/android_asset/www/" + sounds[key])
         } else {
             Crafty.audio.add(key, sounds[key])
-            Game.sounds[key] = {
-                play: function() {
+            function playFunction(k) {
+                return function() {
+                    console.log("Play sound", k, sounds[k]);
                     if (Settings.sound)
-                        Crafty.audio.play(key, 1);
+                        Crafty.audio.play(k, 1);
                 }
+            }
+            Game.sounds[key] = {
+                play: playFunction(key)
             };
         }
     }

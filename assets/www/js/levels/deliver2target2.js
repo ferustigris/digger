@@ -13,13 +13,10 @@ Crafty.c('Deliver2Target2', {
         }
 
         Crafty.e("Cargo1").attr(mainScene.get_random_position_inside());
+        Game.sounds.deliver2target2.play()
     },
     clean: function () {
         this.removeComponent('Deliver2Target2');
         this.destroy();
-    },
-    firstSound: function() {
-        Game.sounds.deliver2target2.play()
-        this.firstSound = function() {}
     }
 });
