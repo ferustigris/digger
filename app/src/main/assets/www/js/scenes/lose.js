@@ -8,7 +8,7 @@ Crafty.scene("lose", function() {
         h: Crafty.DOM.window.height,
         x: 0,
         y: 0
-    }).image("images/ground.jpg", "repeat");
+    }).image("images/sand.jpg", "repeat");
 
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, h: 50, z: 1, scope: Settings.scope});
 

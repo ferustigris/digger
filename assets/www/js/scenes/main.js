@@ -24,6 +24,21 @@ Crafty.scene("main", function() {
         return pos
     }
 
+    this.get_random_position_inside = function() {
+        do { 
+            var x = Crafty.math.randomInt(1, Settings.width / Settings.poligon - 2)
+            var y = Crafty.math.randomInt(1, Settings.height / Settings.poligon - 3)
+            var pos = {
+                x: x * Settings.poligon,// + 10,
+                y: y * Settings.poligon,// + 10,
+                w: Settings.poligon,// - 20,
+                h: Settings.poligon// - 20
+            } 
+        } while (ocupied.search(joinCoord(x, y)) >= 0)
+        ocupied += joinCoord(x, y);
+        return pos
+    }
+
     this.get_position = function(x, y) {
         ocupied += joinCoord(x, y);
         return {

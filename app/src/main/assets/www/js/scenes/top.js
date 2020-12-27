@@ -6,7 +6,7 @@ Crafty.scene("top", function() {
         h: Crafty.DOM.window.height,
         x: 0,
         y: 0
-    }).image("images/ground.jpg", "repeat");
+    }).image("images/sand.jpg", "repeat");
 
     // выводим по центру текст
     var imageX = Crafty.DOM.window.width/2;

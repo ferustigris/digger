@@ -4,21 +4,21 @@ Crafty.c('Deliver2Target', {
     },
     addPersonages: function(mainScene) {
 
-        Crafty.e("Player").attr(mainScene.get_position(0, 0));
-        Crafty.e("Target1").attr(mainScene.get_position(3, 3));
+        Crafty.e("Player").attr(mainScene.get_position(0, 0)).attr({'level': this});
+        Crafty.e("Target1").attr(mainScene.get_position(2, 2));
         Crafty.e("Cargo1").attr(mainScene.get_position(1, 1));
 
-        for(var i = 0; i < mainScene.cellsCount/5; i++) {
+        for(var i = 0; i < mainScene.cellsCount/10; i+=2) {
             Crafty.e("Ground").attr(mainScene.get_random_position())
-        }
-        for(var i = 0; i < mainScene.cellsCount/10; i++) {
             Crafty.e("Stone").attr(mainScene.get_random_position())
         }
-
-        Game.sounds.deliver2target.play();
     },
     clean: function () {
         this.removeComponent('Deliver2Target');
         this.destroy();
+    },
+    firstSound: function() {
+        Game.sounds.deliver2target.play()
+        this.firstSound = function() {}
     }
 });

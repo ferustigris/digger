@@ -80,6 +80,9 @@ Crafty.c('Player', {
                 Crafty.scene("lose");
             }, 1500);
         });
+        this.bind('Move', function(evt) {
+            player.level.firstSound()
+        })
 
     },
 

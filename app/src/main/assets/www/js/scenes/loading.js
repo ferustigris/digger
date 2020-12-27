@@ -6,9 +6,9 @@ Crafty.scene("loading", function() {
         h: Crafty.DOM.window.height,
         x: 0,
         y: 0
-    }).image("images/ground.jpg", "repeat");
+    }).image("images/sand.jpg", "repeat");
 
-    var splashSizes = [800, 400, 200, 75, 0];
+    var splashSizes = [800, 400, 200];
     var splashSizeIndex = 0;
 
     while (splashSizes[splashSizeIndex] > Math.min(Crafty.DOM.window.width, Crafty.DOM.window.height)) {

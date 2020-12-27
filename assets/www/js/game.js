@@ -44,7 +44,6 @@ var AllScripts = [
     'js/objects/cargo1',
     'js/objects/ground',
     'js/objects/sand',
-    'js/objects/cross',
     'js/objects/unit',
     'js/objects/player',
     'js/objects/player_sprite',
@@ -127,22 +126,13 @@ require(AllScripts, function() {
     Crafty.sprite(Settings.poligon, "images/house.png", {
         house: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/bag.png", {
-        bag: [0,0]
-    });
-    Crafty.sprite(Settings.poligon, "images/repa.png", {
-        repa: [0,0]
-    });
-    Crafty.sprite(Settings.poligon, "images/cross.png", {
-        cross: [0,0]
-    });
     Crafty.sprite(Settings.poligon, "images/track.png", {
         track: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/trackfull.png", {
         trackfull: [0,0]
     });
-    Crafty.sprite(Settings.poligon, "images/tracktarget.png", {
+    Crafty.sprite(Settings.poligon, "images/trackTarget.png", {
         tracktarget: [0,0]
     });
     Crafty.sprite(Settings.poligon, "images/trackfulltarget_completed.png", {

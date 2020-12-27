@@ -10,6 +10,6 @@ public class MyPhoneGapActivity extends DroidGap {
 		super.onCreate(savedInstanceState);
 		getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		super.loadUrl("file:///android_asset/www/menu.html");
+		super.loadUrl("file:///android_asset/www/game.html");
 	}
 }
