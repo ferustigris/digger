@@ -1,4 +1,4 @@
-package ferus.tigris.digger;
+package ferus.tigris.digger2;
 
 import com.phonegap.*;
 import android.os.Bundle;

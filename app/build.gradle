@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "ferus.tigris.digger"
+        applicationId "ferus.tigris.digger2"
         minSdkVersion 21
         targetSdkVersion 29
     }
