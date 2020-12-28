@@ -19,13 +19,13 @@ Crafty.scene("top", function() {
     for (var i = 0; i < count; i++) {
         var topItem = top.get(i);
         Crafty.e("2D, DOM, Text")
-            .attr({w: 200, h: h, x: imageX - 100, y: imageY - h*count/2 +  + i*h})
+            .attr({w: 200, h: h, x: imageX - Settings.poligon, y: imageY - h*count/2 +  + i*h})
             .text(topItem.name)
             .unselectable()
             .textColor('#FFFFFF', 1)
             .textFont({ size: '20px', weight: 'bold' });
         Crafty.e("2D, DOM, Text")
-            .attr({w: 200, h: h, x: imageX + 100, y: imageY - h*count/2 +  + i*h})
+            .attr({w: 200, h: h, x: imageX + Settings.poligon, y: imageY - h*count/2 +  + i*h})
             .text(topItem.value)
             .textFont({ size: '20px', weight: 'bold' })
             .textColor('#FFFFFF', 1)

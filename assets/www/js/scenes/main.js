@@ -1,6 +1,9 @@
 Crafty.scene("main", function() {
     Settings.width = Crafty.DOM.window.width;
     Settings.height = Crafty.DOM.window.height;
+    if (Settings.width < 501 || Settings.height < 501) {
+        Settings.poligon = 50;
+    }
 
     var ocupied = "0,0;";
     function joinCoord(x, y) {

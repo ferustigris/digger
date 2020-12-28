@@ -19,8 +19,8 @@ Crafty.c('TrackTarget', {
     onHitCustom: function(track) {
         console.log("onHitCustom Track & target");
         Settings.scope += 50;
-        Crafty.e("TrackTargetCompleted").attr({x: this.x, y: this.y});
-        Crafty.e("TrackFull").attr({x: this.x, y: this.y});
+        Crafty.e("TrackTargetCompleted").attr({x: this.x, y: this.y, w: this.w, h: this.h});
+        Crafty.e("TrackFull").attr({x: this.x, y: this.y, w: this.w, h: this.h});
         Game.sounds.trackfull_go2target.play()
         this.clean();
         track.clean();

@@ -5,7 +5,6 @@ Crafty.c('ResetButton', {
         this.requires("Mouse");
         this.requires("donate");
 
-        this.attr({ w: 100, h: 100 })
         this.bind("Click", function(){
             console.log("donate on click");
             this.Click()

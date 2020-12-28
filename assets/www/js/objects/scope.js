@@ -3,7 +3,7 @@ Crafty.c('Scope', {
         this.requires("2D");
         this.requires("Canvas");
 
-        this.attr({x: 0, y: 0, z: 1, w: 200, h: 100, scope: Settings.scope});
+        this.attr({x: 0, y: 0, z: 1, scope: Settings.scope});
 
         this.text = Crafty.e("2D, DOM, Text")
             .attr({w: this.w, h: this.h, x: this.x, y: this.y})

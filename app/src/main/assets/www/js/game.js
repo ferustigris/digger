@@ -92,36 +92,44 @@ var AllScripts = [
 require(AllScripts, function() {
     Crafty.init(); // инизиализируем игровое поле
     Settings.sound = Sound().sound;
+    console.log("Game started!")
 
     Game.level = new Level(Settings);
+    Settings.width = Crafty.DOM.window.width;
+    Settings.height = Crafty.DOM.window.height;
+    if (Settings.width < 501 || Settings.height < 501) {
+        Settings.poligon = 50;
+    }
 
+	images_path = Settings.poligon == 50 ? "images/x50" : "images"
+	// images_path = "images"
     sprites = {
-        digger: "images/digger.png",
-        ground: "images/ground.png",
-        sand: "images/sand.jpg",
-        house: "images/house.png",
+        digger: images_path + "/digger.png",
+        ground: images_path + "/ground.png",
+        sand: images_path + "/sand.jpg",
+        house: images_path + "/house.png",
 
-        soundon: "images/soundon.png",
-        soundoff: "images/soundoff.png",
-        restart: "images/restart.png",
+        soundon: images_path + "/soundon.png",
+        soundoff: images_path + "/soundoff.png",
+        restart: images_path + "/restart.png",
 
-        target1: "images/target1.png",
-        cargo1: "images/cargo1.png",
-        target1completed: "images/construction1.png",
+        target1: images_path + "/target1.png",
+        cargo1: images_path + "/cargo1.png",
+        target1completed: images_path + "/construction1.png",
 
-        monster: "images/monster.png",
+        monster: images_path + "/monster.png",
 
-        track: "images/track.png",
-        tracktarget: "images/trackTarget.png",
-        tracktargetcompleted: "images/tracktarget_completed.png",
-        trackfull: "images/trackfull.png",
-        trackfulltargetcompleted: "images/construction2.png",
+        track: images_path + "/track.png",
+        tracktarget: images_path + "/trackTarget.png",
+        tracktargetcompleted: images_path + "/tracktarget_completed.png",
+        trackfull: images_path + "/trackfull.png",
+        trackfulltargetcompleted: images_path + "/construction2.png",
 
-        concrete_track: "images/concrete_track.png",
-        concrete_track_target: "images/concrete_target_full.png",
-        concrete_track_target_empty: "images/concrete_target_empty.png",
-        concrete_track_full: "images/concrete_trackfull.png",
-        concrete_track_full_target_completed: "images/construction3.png",
+        concrete_track: images_path + "/concrete_track.png",
+        concrete_track_target: images_path + "/concrete_target_full.png",
+        concrete_track_target_empty: images_path + "/concrete_target_empty.png",
+        concrete_track_full: images_path + "/concrete_trackfull.png",
+        concrete_track_full_target_completed: images_path + "/construction3.png",
     }
 
     for (var key in sprites) {

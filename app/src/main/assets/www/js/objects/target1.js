@@ -25,7 +25,7 @@ Crafty.c('Target1', {
             object.clear();
 
             Settings.scope += 50;
-            Crafty.e("Target1Completed").attr({x: this.x, y: this.y});
+            Crafty.e("Target1Completed").attr({x: this.x, y: this.y, w: this.w, h: this.h});
             this.clean();
 
             Game.win();

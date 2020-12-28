@@ -19,7 +19,7 @@ Crafty.c('TrackFullTarget', {
     onHitCustom: function(track) {
         console.log("onHitCustom Track & target");
         Settings.scope += 50;
-        Crafty.e("TrackFullTargetCompleted").attr({x: this.x, y: this.y});
+        Crafty.e("TrackFullTargetCompleted").attr({x: this.x, y: this.y, w: this.w, h: this.h});
         this.clean();
         track.clean();
         Game.win()

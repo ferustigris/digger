@@ -4,8 +4,6 @@ Crafty.c('Flower', {
     this.requires("Canvas");
     this.requires("bag");
     this.requires("SpriteAnimation");
-
-    this.attr({x: 0, y: 0});
   },
 
   clear: function() {

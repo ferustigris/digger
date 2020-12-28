@@ -17,7 +17,7 @@ Crafty.scene("lose", function() {
     var imageY = Crafty.DOM.window.height/2;
 
     Crafty.e("2D, DOM, Text")
-        .attr({w: Settings.width, h: 200, x: imageX - Settings.width/2, y: imageY - 100})
+        .attr({w: Settings.width, h: 200, x: imageX - Settings.width/2, y: imageY - Settings.poligon})
         .text(isGameOver ? "Начнем сначала?" : "Давай попробуем еще раз?")
         .textFont({ size: '48px'})
         .css({

@@ -3,8 +3,6 @@ Crafty.c('Sand', {
         this.requires("2D");
         this.requires("Canvas");
         this.requires("sand");
-
-        this.attr({x: 0, y: 0});
     },
 
     clear: function() {

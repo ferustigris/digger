@@ -7,7 +7,7 @@ Crafty.c('Cargo1', {
         this.requires("hard_stone");
         this.requires("Tween");
 
-        this.attr({x: 0, y: 0, z: 2, w: Settings.poligon, h: Settings.poligon});
+        this.attr({x: 0, y: 0, z: 2});
 
     },
         

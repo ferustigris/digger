@@ -4,7 +4,6 @@ Crafty.c('SoundButtonOn', {
         this.requires("DOM");
         this.requires("soundoff");
         this.requires("Mouse");
-        this.attr({ w: 100, h: 100 })
         this.bind("Click", function(){
             console.log("OnClick");
             this.Click()
@@ -14,7 +13,7 @@ Crafty.c('SoundButtonOn', {
         Sound().soundSwitch()
         Settings.sound = true
         console.log("Sound off");
-        Crafty.e("SoundButtonOff").attr({x: this.x, y: this.y});
+        Crafty.e("SoundButtonOff").attr({x: this.x, y: this.y, w: this.w, h: this.h});
         this.clean();
     },
 
