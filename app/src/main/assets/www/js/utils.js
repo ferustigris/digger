@@ -4,6 +4,22 @@ function exit() {
     navigator.app.exitApp()
 }
 
+function debug(txt) {
+    if (Settings.debug) {
+        if(this.e) {
+            this.e.removeComponent('Text');
+            this.e.destroy();
+        }
+        this.e = Crafty.e("2D, DOM, Text")
+            .text(txt)
+            .textFont({ size: '16px'})
+            .css({
+                "text-align": "center",
+                "color": "white"
+            });
+    }
+}
+
 var Sound = function () {
     var self = this;
     this.sound = $.jStorage.get("sound", true);

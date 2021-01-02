@@ -15,7 +15,7 @@ Crafty.scene("win", function() {
 
     while (splashSizes[splashSizeIndex] > Math.min(Crafty.DOM.window.width, Crafty.DOM.window.height)) {
         splashSizeIndex++;
-	if(splashSizeIndex == splashSizes.length - 1)break;
+	    if(splashSizeIndex == splashSizes.length - 1)break;
     }
 
     var imgWidth = splashSizes[splashSizeIndex];
@@ -34,8 +34,6 @@ Crafty.scene("win", function() {
     }).image(imgName);
 
     setTimeout(function() {
-          Crafty.scene("main");
+        Crafty.scene("main");
     }, 2500);
-
-    Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, h: 50, z: 1, scope: Settings.scope});
 });

@@ -6,9 +6,11 @@ Crafty.c('TrackTarget', {
         this.requires("SpriteAnimation");
         this.requires("Collision");
 
-        var num = 0;//Crafty.math.randomInt(0, 7)
-        this.animate("first", num, 0, num);
-        this.animate("first", 1);        
+        this.animate("walk_left", 0, 0, 0);
+        this.animate("walk_left", 1);
+        this.bind("Moved", function(e) {
+             Game.sounds.track.play();
+        });
 
         this.onHit("Track", function(e) {
             //FIXME: doesn't work

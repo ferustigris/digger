@@ -9,6 +9,7 @@ Crafty.scene("main", function() {
     function joinCoord(x, y) {
         return x + "," + y + ";";
     }
+    debug("main scene")
 
     console.log("Main scene started!")
 
@@ -51,7 +52,7 @@ Crafty.scene("main", function() {
             h: Settings.poligon
         } 
     }
-
+    debug("main scene - poligon")
     for(var i = 0; i*Settings.poligon < Settings.width; i++) {
         for(var j = 0; j*Settings.poligon < Settings.height; j++) {
             Crafty.e("Sand").attr({x: i * Settings.poligon, y: j * Settings.poligon});
@@ -65,11 +66,14 @@ Crafty.scene("main", function() {
         3: Crafty.e("Go2TargetConcrete")
     }
     this.cellsCount = Settings.width / Settings.poligon * Settings.height / Settings.poligon
-    
+    debug("main scene - levels")
+
     level = levels[Settings.level % 4]
     console.log(Settings.level % 4)
     console.log(level)
+    debug("main scene - add personages to levels")
     level.addPersonages(this)
+    debug("main scene - buttons")
 
     Crafty.e(Settings.sound ? "SoundButtonOff" : "SoundButtonOn").attr({
         x: Settings.width - 1 * Settings.poligon,
@@ -87,6 +91,7 @@ Crafty.scene("main", function() {
         z: 1
     });
 
+    debug("main scene - scope")
     Game.scopeView = Crafty.e("Scope").attr({x: 0, y: 0, z: 1, scope: Settings.scope});
     console.log("Main scene stopped!")
 });

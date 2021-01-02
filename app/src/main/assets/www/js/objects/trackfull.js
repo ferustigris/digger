@@ -8,6 +8,9 @@ Crafty.c('TrackFull', {
         this.requires("Collision");
 
         this.fourway(Settings.speed/2);
+        this.bind("Moved", function(e) {
+             Game.sounds.track.play();
+        });
 
         track = this;
         this.bind('Move', function(evt) {

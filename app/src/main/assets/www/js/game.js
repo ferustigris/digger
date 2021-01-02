@@ -4,8 +4,9 @@ var Settings = {
     poligon: 100, // размер полигона 16x16
     scope: 0,
     level: 1, // текущий уровень
-    speed: 10, // current monster speed
+    speed: 1000, // current monster speed
     flower_count: 0, // цветоков на уровне
+    debug: false,
     sound: true
 };
 
@@ -120,7 +121,7 @@ require(AllScripts, function() {
         monster: images_path + "/monster.png",
 
         track: images_path + "/track.png",
-        tracktarget: images_path + "/trackTarget.png",
+        tracktarget: images_path + "/tracktarget.png",
         tracktargetcompleted: images_path + "/tracktarget_completed.png",
         trackfull: images_path + "/trackfull.png",
         trackfulltargetcompleted: images_path + "/construction2.png",
@@ -151,10 +152,11 @@ require(AllScripts, function() {
         deliver2target2: "sounds/deliver2target2.wav",
         track_go2target: "sounds/track_go2target.wav",
         concrete: "sounds/concrete.wav",
+        track: "sounds/track.wav",
         trackfull_go2target: "sounds/trackfull_go2target.wav",
     }
 
-    var isPhoneGapUse = false;
+    var isPhoneGapUse = true;
     for (var key in sounds) {
         console.log("Load sound", key, sounds[key]);
         if (isPhoneGapUse) {

@@ -6,8 +6,11 @@ Crafty.c('Player', {
         this.requires("PlayerSprite");
         this.requires("Collision");
 
-        this.fourway(Settings.speed);
-        
+        this.fourway(Settings.speed, {normalize:true});
+        this.bind("Moved", function(e) {
+             Game.sounds.tractor.play();
+        });
+
         var player = this;
         this.isCanMoveTo = function(x, y) {
             var isCollision = false;
