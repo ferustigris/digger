@@ -156,7 +156,7 @@ require(AllScripts, function() {
         trackfull_go2target: "sounds/trackfull_go2target.wav",
     }
 
-    var isPhoneGapUse = true;
+    var isPhoneGapUse = false;//false for browser, true for android emulator
     for (var key in sounds) {
         console.log("Load sound", key, sounds[key]);
         if (isPhoneGapUse) {
